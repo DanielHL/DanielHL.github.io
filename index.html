@@ -1,0 +1,1010 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+  <meta name="description" content="The professional web site of Daniel Halpern-Leistner." />
+  <title>Daniel Halpern-Leistner</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 435px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      height: 435px;
+      padding-top: 0px;
+      background: #f07057;
+    }
+
+    .navbar,
+    .main {
+      position: relative;
+    }
+
+    .navbar {
+      list-style-type: none;
+      overflow: hidden;
+      background-color: #333;
+      margin: 0;
+      padding: 0;
+      height: 50px;
+      z-index: 150;
+      margin-bottom: -50px;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
+    }
+
+    header,
+    .navbar-scrolled {
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+
+    .main {
+      background: #f2f2e8;
+    }
+
+    div.padded {
+      padding-top: 70px;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 50px;
+    }
+
+    .navbar li {
+      float: left;
+    }
+
+    .navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .navbar li a:hover:not(.active) {
+      background-color: #111;
+    }
+
+    .navbar li a.active {
+      background-color: #4CAF50;
+    }
+
+    .navbar li.right {
+      float: right;
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar li.right,
+      .navbar li {
+        float: none;
+      }
+    }
+
+    h1 {
+      font-family: Verdana, Geneva, sans-serif;
+      color: white;
+    }
+
+    h2 {
+      font-family: Verdana, Geneva, sans-serif;
+    }
+
+    .parallax_chalkboard {
+      color: #d1d2d4;
+      background: url("chalkboard.jpg") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 1750px;
+    }
+
+    /* Articles section styling */
+    .articles-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .articles-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        max-width: 100%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .articles-container {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        max-width: 1600px;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .articles-container {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        max-width: 1800px;
+      }
+    }
+
+    @media (min-width: 2000px) {
+      .articles-container {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        max-width: 2000px;
+      }
+    }
+
+    .article-bubble {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .article-bubble:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      border-color: #f07057;
+    }
+
+    .article-bubble {
+      position: relative;
+    }
+
+    .article-bubble.expanded {
+      z-index: 10;
+    }
+
+    .article-placeholder {
+      opacity: 0.4;
+      pointer-events: auto;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .article-placeholder:hover {
+      opacity: 0.7;
+    }
+
+    .article-thumbnail {
+      width: 100%;
+      height: 150px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .article-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .article-date {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    .article-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      z-index: 20;
+      margin-top: 10px;
+      padding: 25px;
+      border: 2px solid #f07057;
+    }
+
+    .article-content.expanded {
+      display: block;
+    }
+
+    .expanded-content-row {
+      grid-column: 1 / -1;
+      margin: 20px 0;
+    }
+
+    .expanded-content-container {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      padding: 25px;
+      border: 2px solid #f07057;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .expanded-content-container {
+        padding: 20px;
+        margin: 0 10px;
+      }
+    }
+
+    .article-content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .article-content ul {
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+
+    .article-content li {
+      margin-bottom: 8px;
+    }
+  </style>
+
+  <!--MathJax settings-->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX","output/HTML-CSS"],
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+      TeX: {
+        Macros: {
+          fX: "\\mathfrak{X}",
+          fY: "\\mathfrak{Y}",
+          bA: "\\mathbb{A}",
+          bC: "\\mathbb{C}",
+          sD: "\\mathscr{D}",
+          bR: "\\mathbb{R}",
+          bQ: "\\mathbb{Q}",
+          bG: "\\mathbb{G}"
+        }
+      }
+    });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+  <header>
+    <table border="0" width="100%">
+      <tbody>
+        <tr>
+          <td>
+            <div align="left"><img src="IMG_0090_web.jpg" width="700px" height="428px"></div>
+          </td>
+          <td>
+            <h1 align="center">Daniel Halpern-Leistner</h1>
+            <h2 align="center" style="font-size:medium"><i>Algebraic Geometry, Derived Categories, Machine Learning for Math, Representation Theory</i></h2>
+            <p align="center" style="font-size:medium; margin-top: 10px; color: #f0f0f0;">Associate Professor in Mathematics, Cornell University, <a href="https://docs.google.com/document/d/1uqJZ6OO7kKbiyW3OKA1IlrxJQg7UQdDd-53InwATX3k/edit?usp=sharing" style="color: #f0f0f0;">CV link</a>, email: <a href="mailto:daniel.hl@cornell.edu" style="color: #f0f0f0;">daniel.hl@cornell.edu</a></p>
+            <div align="center" style="padding-top:20px"><img src="monodromy_fadef07057.jpg" alt="monodromy" height="186" width="329"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </header>
+  
+  <div class="main">
+    <ul class="navbar">
+      <li><a href="#professional">Recent</a></li>
+      <li><a href="#articles">Research</a></li>
+      <li><a href="#expository">Expository</a></li>
+      <li><a href="#advising">Advising</a></li>
+      <li><a href="http://moduli.nl">Moduli journal</a></li>
+      <li><a href="http://book.themoduli.space">Moduli book</a></li>
+      <li><a href="#beyondGIT">Concept Map</a></li>
+      <li class="right"><a href="#">Home</a></li>
+    </ul>
+    
+    <a name="professional"></a>
+    <div class="padded">
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td>
+                <div class="padded">
+                  <h2 align="center">Recent Activity</h2>
+                  
+                  <!--<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">-->
+                    <!-- Recent Activities -->
+                    <div>
+                      <!--<h3 style="color: #f07057; margin-bottom: 15px;">Recent Activities</h3>-->
+                      <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
+                          <span style="position: absolute; left: 0; color: #f07057;">•</span>
+                          <strong>New Paper:</strong> <em>A categorical perspective on non-abelian localization.</em> (Sept. 20215) Develops a new method to study the derived category of quasi-coherent sheaves on stacks with a $\Theta$-stratification, with applications to enumerative geometry.
+                          <p><a href="" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
+                          <span style="position: absolute; left: 0; color: #f07057;">•</span>
+                          <strong>Research Project:</strong> <em>Autoformalization for the working mathematician benchmark</em>. An effort to develop a benchmarking dataset for autoformalization of mathematics, with special emphasis on tasks that are useful for research mathematicians, beginning in June, 2025.
+                          <p><a href="https://github.com/DanielHL/autoformalization_pilot" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Github Repo →</a></p>
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
+                          <span style="position: absolute; left: 0; color: #f07057;">•</span>
+                          <strong>Conference Talk:</strong> <em>On the alignment problem in mathematics</em> at the Stevens Institute of Technology, June 2025. An invitation for mathematicians to play an active role in the development of AI tools. I announce a community project to construct a dataset for training autoformalization systems.
+                          <p><a href="https://docs.google.com/presentation/d/1dHOjWLtdn7x31tYfsznRVAolzTQxgFAYGcC-Sd0Ihxg/edit?usp=sharing" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Slides →</a></p>
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
+                          <span style="position: absolute; left: 0; color: #f07057;">•</span>
+                          <strong>Conference Talk:</strong> <em>Moduli spaces of objects in dg-categories</em> at the <a href="https://www.imsa.miami.edu/events/2025-spring-emphasis/hms-2025/index.html">Homological Mirror Symmetry conference</a> in honor of Maxim Kontsevich's 60th birthday, January 2025. I use recent results in moduli theory to give an intrinsic formulation of homological mirror symmetry, and I introduce some conjectures in symplectic topology that would imply it. I gave a similar talk at the <a href="https://sites.google.com/view/2025summerinstitute/home?authuser=0">2025 Summer Research Institute in Algebraic Geometry</a>, July 2025
+                          <p><a href="miami_dg_moduli_slides.pdf" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Slides →</a></p>
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
+                          <span style="position: absolute; left: 0; color: #f07057;">•</span>
+                          <strong>Upcoming:</strong> Invited speaker at the International Congress of Mathematicians, Summer 2026
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <!-- Blog Preview -->
+                    <!--<div>
+                      <h3 style="color: #f07057; margin-bottom: 15px;">Latest Blog Post</h3>
+                      <div style="background: #f8f8f8; padding: 20px; border-radius: 10px; border-left: 4px solid #f07057;">
+                        <h4 style="margin-top: 0; color: #333;">"Machine Learning Meets Algebraic Geometry"</h4>
+                        <p style="color: #666; font-size: 0.9em; margin-bottom: 15px;">Posted: March 15, 2024</p>
+                        <p style="line-height: 1.6; margin-bottom: 15px;">Exploring the intersection of machine learning and algebraic geometry, and how computational methods are revolutionizing our understanding of moduli spaces...</p>
+                        <a href="#" style="color: #f07057; text-decoration: none; font-weight: bold;">Read more →</a>
+                      </div>
+                    </div>-->
+                  <!--</div>-->
+                </div>
+            </td>
+            <td><img src="daniel-halpern-leistner.jpg" width=auto height=auto alt="Dan H-L"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <a name="articles"></a>
+    <div class="padded">
+      <h2 align="center">Research</h2>
+      <div style="max-width: auto; margin: 0 auto 40px auto; padding: 20px; background: #f8f8f8; border-radius: 10px; border-left: 4px solid #f07057;">
+        <p style="margin-bottom: 0; line-height: 1.6;">Below is a selection of my research projects, organized into three main themes. A full and up-to-date list of my articles is available <a href="https://arxiv.org/search/?searchtype=author&query=Halpern-Leistner%2C+D">here</a> and on my <a href="https://scholar.google.com/citations?user=jKEHH8kAAAAJ&hl=en">Google Scholar page</a>.</p>
+      </div>
+      
+      <!-- Research Themes -->
+      <div style="max-width: auto; margin: 0 auto 40px auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+          
+          <!-- Theme 1 -->
+          <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #f07057; cursor: pointer; transition: transform 0.3s ease;" onclick="scrollToSection('theme1')">
+            <h4 style="color: #f07057; margin-top: 0; margin-bottom: 15px; font-size: 1.1em;">Moduli Theory, Beyond GIT</h4>
+            <p style="line-height: 1.6; color: #666; margin-bottom: 0;">My work built a bridge between geometric invariant theory, which is a collection of results describing the orbit structure for the action of a reductive group on an algebraic variety, with the intrinsic approach to moduli theory in algebraic geometry, i.e., the theory of algebraic stacks. In the past few years, I have been focused on applying the general theory to various moduli problems of interest in algebraic geometry.</p>
+          </div>
+          
+          <!-- Theme 2 -->
+          <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #4CAF50; cursor: pointer; transition: transform 0.3s ease;" onclick="scrollToSection('theme2')">
+            <h4 style="color: #4CAF50; margin-top: 0; margin-bottom: 15px; font-size: 1.1em;">Structure of Derived Categories</h4>
+            <p style="line-height: 1.6; color: #666; margin-bottom: 0;">The derived category of a variety $X$ is an $\infty$-category that encodes all information about coherent sheaves on $X$ and their cohomology. Remarkably, derived categories often have structures and symmetries that are not visible on the level of coherent sheaves alone. My work has shed light on these structures, especially in the setting of equivariant coherent sheaves for the action of a group on $X$, taking inspiration from mathematical physics and homological mirror symmetry.</p>
+          </div>
+          
+          <!-- Theme 3 -->
+          <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #2196F3; cursor: pointer; transition: transform 0.3s ease;" onclick="scrollToSection('theme3')">
+            <h4 style="color: #2196F3; margin-top: 0; margin-bottom: 15px; font-size: 1.1em;">Machine Learning for Mathematics</h4>
+            <p style="line-height: 1.6; color: #666; margin-bottom: 0;">Since 2017, I have had a side interest in machine learning, and it has recently taken a larger role in my research effort. I have investigated applications of reinforcement learning to computer algebra, and more recently applications of large language models to formalization of mathematical arguments.</p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Theme 1 -->
+      <h3 id="theme1" align="center" style="color: #f07057; margin: 50px 0 30px 0; font-size: 1.3em; padding-top: 20px;">Moduli Theory, Beyond GIT</h3>
+      <div class="articles-container">
+        
+        <!-- Article 1 -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Towards a general theory of instability in moduli theory</div>
+          <div class="article-date">updated 6/18/2021</div>
+          <div class="article-content">
+            <p>A common kind of problem in algebraic geometry is to find a space, called a moduli space, parameterizing isomorphism classes of some kind of algebro-geometric objects -- let's call them widgets. Many attempts to form a moduli space for widgets proceed by finding a scheme, $X$, which parameterizes a family of widgets, and an algebraic group, $G$, acting on $X$ such that points in the same orbit under $G$ parameterize isomorphic widgets. Then hopefully one can apply geometric invariant theory to find an open subset in X which has a good quotient under the action of $G$, and whose $G$-orbits classify ``semistable'' widgets. However, there are many situations where a stability condition can be specified on widgets without referring to any GIT problem. We discuss a framework for defining a notion of semistability for an arbitrary moduli problem, and we introduce a structure on the unstable locus, which we call a Theta-stratification, which generalizes classical stratifications of the unstable locus in GIT as well as of the moduli of vector bundles on a curve. We identify a class of moduli problems, which we call $\Theta$-reductive, for which the GIT story carries over nicely into this more general framework -- for these stacks the existence of a $\Theta$-stratification on the unstable locus can be reduced to checking a relatively simple hypothesis.</p>
+            <ul>
+              <li><em>"On the structure of instability in moduli theory," (<a href="https://arxiv.org/abs/1411.0627">arXiv</a>)</em></li>
+              <li><em>Updated version <a href="theta_stability_2022_02_02_wide.pdf">here</a>. (Last update 2/2/2022)</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">On properness of $K$-moduli spaces and optimal degenerations of Fano varieties</div>
+          <div class="article-date">update 11/03/20</div>
+          <div class="article-content">
+            <p>We establish an algebraic approach to prove the properness of moduli spaces of K-polystable Fano varieties and reduce the problem to a conjecture on destabilizations of K-unstable Fano varieties. Specifically, we prove that if the stability threshold of every K-unstable Fano variety is computed by a divisorial valuation, then such K-moduli spaces are proper. The argument relies on studying certain optimal destabilizing test configurations and constructing a Theta-stratification on the moduli stack of Fano varieties.</p>
+            <ul>
+              <li><em>"On properness of $K$-moduli spaces and optimal degenerations of Fano varieties" with Harold Blum, Yuchen Liu, and Chenyang Xu (<a href="https://arxiv.org/abs/2011.01895">arXiv:2011.01895</a>)</em></li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Article 5 -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Reductivity of the automorphism group of K-polystable Fano varieties</div>
+          <div class="article-date">update 7/28/2020</div>
+          <div class="article-content">
+            <p>We prove that K-polystable log Fano pairs have reductive automorphism groups. In fact, we deduce this statement by establishing more general results concerning the S-completeness and $\Theta$-reductivity of the moduli of K-semistable log Fano pairs. Assuming the conjecture that K-semistability is an open condition, we prove that the Artin stack parametrizing K-semistable Fano varieties admits a separated good moduli space.</p>
+            <ul>
+              <li><em>"Reductivity of the automorphism group of K-polystable Fano varieties" with Jarod Alper, Harold Blum, and Chenyang Xu (<a href="https://arxiv.org/abs/1906.03122">arXiv:1906.03122</a>)</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article 6 -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Mapping stacks and the notion of properness in algebraic geometry</div>
+          <div class="article-date">update 7/29/2019</div>
+          <div class="article-content">
+            <p>One essential feature of a scheme $X$ which is flat and proper over a base $S$ is that for any scheme $Y$ which is of finite type over $S$, there is an algebraic space $Map(X,Y)$ classifying maps from $X$ to $Y$. There are extensions of this statement when $X$ is a proper stack over $S$ and $Y$ has some reasonable hypotheses. While studying the notion of instability in algebraic geometry, I noticed that the quotient stack $\bC / \bC^\ast$ has this property as well. This lead to long investigation with Anatoly Preygel into just what properties of a stack X guarantee the existence of algebraic mapping stacks into "geometric" target stacks. We reformulated the notion of "properness" for algebraic stacks in terms of properties of the derived category of those stacks, in such a way that these categorical properties guarantee the existence of algebraic mapping stacks. Our notion generalizes the classical definition of proper Artin stacks, but in addition there are many global quotient stacks which are definitely not proper in the classical sense but are "proper" in our sense. We were able to construct a very large class of examples by introducing a notion of "projective morphism" of stacks, a property which can be readily verified in examples. Along the way, we prove some surprising new descent properties for derived categories of coherent sheaves in derived algebraic geometry.</p>
+            <ul>
+              <li><em>"Mapping stacks and categorical notions of properness," with Anatoly Preygel (<a href="https://arxiv.org/abs/1402.3204">arXiv:1402.3204</a>)</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article 7 -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Cartan-Iwahori-Matsumoto decompositions for reductive groups</div>
+          <div class="article-date">update 3/1/2019</div>
+          <div class="article-content">
+            <p>We provide a short and self-contained argument for the existence of Cartan-Iwahori-Matsumoto decompositions for reductive groups.</p>
+            <ul>
+              <li><em>"Cartan-Iwahori-Matsumoto decompositions for reductive groups" with Jarod Alper and Jochen Heinloth (<a href="https://arxiv.org/abs/1903.00128">arXiv:1903.00128</a>)</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article 8 -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Existence of moduli spaces for algebraic stacks</div>
+          <div class="article-date">updated 5/6/2019</div>
+          <div class="article-content">
+            <p>We provide necessary and sufficient conditions for when an algebraic stack admits a good moduli space. This theorem provides a generalization of the Keel-Mori theorem to moduli problems whose objects have positive dimensional automorphism groups. We also prove a semistable reduction theorem for points of algebraic stacks equipped with a $\Theta$-stratification. Using these results we find conditions for the good moduli space to be separated or proper. To illustrate our method, we apply these results to construct proper moduli spaces parameterizing semistable $G$-bundles on curves.</p>
+            <ul>
+              <li><em>"Existence of good moduli spaces for algebraic stacks" with Jarod Alper and Jochen Heinloth (<a href="https://arxiv.org/abs/1812.01128">arXiv:1812.01128</a>)</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article: Tannaka duality revisited -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Tannaka duality revisited</div>
+          <div class="article-date">update 7/05/15</div>
+          <div class="article-content">
+            <p>Any map between algebraic stacks $f: \fX \to \fY$ yields a symmetric monoidal functor between derived categories of quasicoherent sheaves $f^\ast : QC(\fY) \to QC(\fX)$. Jacob Lurie showed that when $\fY$ is geometric (meaning quasicompact with affine diagonal), $f$ can be uniquely recovered from $f^\ast$, and the symmetric monoidal functors arising in this way are those satisfying certain hypotheses (continuous, preserving connective objects and flat objects). We generalize this result, showing that for many stacks, it is not necessary to show that $f$ preserves flat objects. This seemingly minor modification allows for a much wider range of applications of this "Tannakian formalism."</p>
+            <p>
+              "Tannaka duality revisited" with Bhargav Bhatt (<a href="http://arxiv.org/abs/1507.01925">arxiv:1507.01925</a>)
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- Theme 2 -->
+      <h3 id="theme2" align="center" style="color: #4CAF50; margin: 50px 0 30px 0; font-size: 1.3em; padding-top: 20px;">Structure of Derived Categories</h3>
+      <div class="articles-container">
+
+        <!-- Article 2 -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Derived $\Theta$-stratifications and the D-equivalence conjecture</div>
+          <div class="article-date">update 6/18/21</div>
+          <div class="article-content">
+            <p>A follow up to "The derived category of a GIT quotient." The theory of $\Theta$-stratifications generalizes a classical stratification of the moduli of vector bundles on a smooth curve, the Harder-Narasimhan-Shatz stratification, to any moduli problem that can be represented by an algebraic stack. We use methods from derived algebraic geometry to develop a structure theory, which is a refinement of the theory of local cohomology, for the derived category of quasi-coherent complexes on an algebraic stack equipped with a $\Theta$-stratification. We then apply this to the $D$-equivalence conjecture, which predicts that birationally equivalent Calabi-Yau manifolds have equivalent derived categories of coherent sheaves. We prove that any two projective Calabi-Yau manifolds that are birationally equivalent to a smooth moduli space of Gieseker semistable coherent sheaves on a $K3$ surface have equivalent derived categories. This establishes the first known case of the $D$-equivalence conjecture for a birational equivalence class in dimension greater than three.</p>
+            <ul>
+              <li>"Derived $\Theta$-stratifications and the D-equivalence conjecture." (<a href="https://arxiv.org/abs/2010.01127">draft</a>; last update 10/01/20)</li>
+              <li>These results were originally announced in the paper ``Theta-stratifications, Theta-reductive stacks, and applications"</li>
+            </ul>
+            <p><em>Preliminary versions:</em> The above paper unites, generalizes, and corrects minor errors in two previous notes. I am preserving them here for reference.</p>
+            <ul>
+              <li>"The D-equivalence conjecture for moduli spaces of sheaves on a K3 surface" (<a href="derived_equivalences_2016_09_18.pdf">draft</a>; last update 2/08/17) -- proves that under suitable genericity hypotheses, a variation of good moduli space for a derived stack with self-dual cotangent complex results in a derived equivalence, and sketches the main application to the D-equivalence conjecture.</li>
+              <li>"An appendix to 'Theta stratifications and derived categories'" (<a href="derived_Kirwan_surjectivity_appendix_2015_01_13.pdf">draft</a>; last update 2/04/15) -- proves a version of the main theorem for global quotient stacks, which is enough for many applications</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article: A categorification of the Atiyah-Bott localization formula -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">A categorical perspective on non-abelian localization</div>
+          <div class="article-date">update 5/20/17</div>
+          <div class="article-content">
+            <p>This is a short note which discusses a construction involving equivariant derived categories which allows one to state a categorical version of the classical Atiyah-Bott localization formula. The classical theorem states that for a smooth manifold with a $\bC^\ast$-action, the fundamental class in equivariant cohomology can be decomposed as a finite sum with each term corresponding to a connected component of the fixed locus, but in order to do this one must formally invert certain elements in the equivariant cohomology of the point. We show that if $X$ is a smooth scheme, then the structure sheaf of $X$ admits a filtration whose associated graded pieces correspond to connected components of the fixed locus, but in order to do this one must work in a slightly larger category of equivariant complexes, which we define.</p>
+            <p>
+              <a href="localization_2016_08_28.pdf">"A categorification of the Atiyah-Bott localization formula</a>; last update 5/21/2016
+            </p>
+          </div>
+        </div>
+
+        <!-- Article: The equivariant Verlinde formula on the moduli of Higgs bundles -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">The equivariant Verlinde formula on the moduli of Higgs bundles</div>
+          <div class="article-date">update 8/4/2016</div>
+          <div class="article-content">
+            <p>The Verlinde formula expresses the dimension of the space of global sections of certain "determinant" line bundles on the moduli of principal $G$ bundles on a smooth curve $\Sigma$, where $G$ is a semisimple group. We prove an analog of the Verlinde formula on the moduli space of semistable meromorphic $G$-Higgs bundles over a smooth curve for a reductive group $G$ whose fundamental group is free. The formula expresses the graded dimension of the space of sections of a positive line bundle on the moduli space of Higgs bundles as a finite sum whose terms are indexed by formal solutions of a generalized Bethe ansatz equation on the maximal torus of $G$.</p>
+            <p>
+              "The equivariant Verlinde formula on the moduli of Higgs bundles" with an appendix by Constantin Teleman (<a href="http://arxiv.org/abs/1608.01754">arxiv:1608.01754</a>)
+            </p>
+          </div>
+        </div>
+
+        <!-- Article: Combinatorial constructions of derived equivalences -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Combinatorial constructions of derived equivalences</div>
+          <div class="article-date">update 2/26/2016</div>
+          <div class="article-content">
+            <p>This proves a version of what I like to call the ``magic windows" theorem for a fairly general class of quotient stacks: those which are quotients of a linear representation $V$ of a reductive group $G$ (where the representation is ``quasi-symmetric"). The magic windows theorem identifies (under some mild hypotheses) a subcategory of the equivariant derived category of coherent sheaves on $V$ with the derived category of coherent sheaves on any GIT quotient of $V$ which is a scheme or more generally a Deligne-Mumford stack. Applications include:</p>
+            <ul>
+              <li>Explicit combinatorial bases in the K-theory and cohomology of GIT quotients of this kind</li>
+              <li>Many new examples of derived equivalences between different Deligne-Mumford GIT quotients of linear representations of this kind</li>
+              <li>Fitting these derived equivalences together to form a representation of the fundamental group(oid) of the complexified Kaehler moduli space of the GIT quotient, and</li>
+              <li>Equivalences (under some mild hypotheses) between all Deligne-Mumford hyperkaehler quotients of a symplectic representation of a reductive group</li>
+            </ul>
+            <p>
+              "Combinatorial constructions of derived equivalences" with Steven Sam (<a href="http://arxiv.org/abs/1601.02030">arxiv:1601.02030</a>)
+            </p>
+          </div>
+        </div>
+
+        <!-- Article: Equivariant Hodge theory and noncommutative geometry -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Equivariant Hodge theory and noncommutative geometry</div>
+          <div class="article-date">update 7/03/15</div>
+          <div class="article-content">
+            <p>We develop a version of Hodge theory for a large class of smooth cohomologically proper quotient stacks $X/G$ analogous to Hodge theory for smooth projective schemes. We show that the noncommutative Hodge-de Rham sequence for the category of equivariant coherent sheaves degenerates. This spectral sequence converges to the periodic cyclic homology, which we canonically identify with the topological equivariant $K$-theory of $X$ with respect to a maximal compact subgroup $M \subset G$. The result is a natural pure Hodge structure of weight $n$ on $K^n_M(X^{an})$. We also treat categories of matrix factorizations for equivariant Landau-Ginzburg models.</p>
+            <ul>
+              <li>"Equivariant Hodge theory and noncommutative geometry" with Daniel Pomerleano (<a href="http://arxiv.org/abs/1507.01924">arxiv:1507.01924</a>)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article: Autoequivalences of derived categories and variation of GIT quotient -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Autoequivalences of derived categories and variation of GIT quotient</div>
+          <div class="article-date">update 3/2013</div>
+          <div class="article-content">
+            <p>In geometric invariant theory (see below), the GIT quotient of $X/G$ depends on a choice from a continuous set of parameters. Nevertheless, the parameter space breaks down into "chambers" within which the GIT quotient <em>does not vary</em>, and these chambers are separated by "walls." When the parameters cross a wall, the GIT quotient is modified by a "birational transformation." I have been studying how the geometry and especially the derived geometry of the GIT quotient changes under such a wall crossing. For the special case of these wall crossings known as a "generalized flop," the derived geometry of the GIT quotient does not change at all. These cases are especially interesting -- they can reveal new symmetries of the derived category of the GIT quotient which do not arise in the classical geometry.</p>
+            <ul>
+              <li>"Autoequivalences of derived categories and variation of GIT quotient," with Ian Shipman (<a href="http://arxiv.org/abs/1303.5531">arxiv:1303.5531</a>)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article: The derived category of a GIT quotient -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">The derived category of a GIT quotient</div>
+          <div class="article-date">update 8/2012</div>
+          <div class="article-content">
+            <p>If an algebraic group $G$ acts on an algebraic variety $X$, such as $\bC^\ast$ acting on affine space by dilation, is there a meaningful notion of a "space of orbits" for that action? Mumford's geometric invariant theory (GIT) answers this question by constructing a well-behaved orbit space for the action of $G$ on an open subset of "semistable points" of $X$. Many of the algebraic varieties we know and love (partial flag varieties, toric varieties,...) can be presented as GIT quotients of affine spaces. Since the 1980's, many beautiful relationships between the geometry and topology of the GIT quotient and the "equivariant" geometry of $X$ have been discovered. My research extends these relationships to the "derived" equivariant geometry of $X$ and the derived geometry of the GIT quotient.</p>
+            <ul>
+              <li>The final version treats quotient stacks X/G subject to a certain technical hypothesis on the stratification (<a href="http://arxiv.org/abs/1203.0276">arxiv:1203.0276</a>)</li>
+              <li>For newcomers, I'd recommend first looking at the version which treated just the smooth case (<a href="http://arxiv.org/abs/1203.0276v2">arxiv:1203.0276v2</a>). Warning: This version contains some errors in the description of the stratification that I corrected in the final version.</li>
+              <li>Notes from an introductory <a href="talk_tensors_workshop_9_27_12.pdf">talk</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theme 3 -->
+      <h3 id="theme3" align="center" style="color: #2196F3; margin: 50px 0 30px 0; font-size: 1.3em; padding-top: 20px;">Machine Learning for Mathematics</h3>
+      <div class="articles-container">
+
+        <!-- Article: Learning selection strategies in Buchberger's algorithm -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Learning selection strategies in Buchberger's algorithm</div>
+          <div class="article-date">update 8/17/2020</div>
+          <div class="article-content">
+            <p>Studying the set of exact solutions of a system of polynomial equations largely depends on a single iterative algorithm, known as Buchberger's algorithm. Optimized versions of this algorithm are crucial for many computer algebra systems (e.g., Mathematica, Maple, Sage). We introduce a new approach to Buchberger's algorithm that uses reinforcement learning agents to perform S-pair selection, a key step in the algorithm. We then study how the difficulty of the problem depends on the choices of domain and distribution of polynomials, about which little is known. Finally, we train a policy model using proximal policy optimization (PPO) to learn S-pair selection strategies for random systems of binomial equations. In certain domains, the trained model outperforms state-of-the-art selection heuristics in total number of polynomial additions performed, which provides a proof-of-concept that recent developments in machine learning have the potential to improve performance of algorithms in symbolic computation.</p>
+            <ul>
+              <li><em>"Learning selection strategies in Buchberger's algorithm" with Dylan Peifer and Mike Stillman (<a href="https://arxiv.org/abs/2005.01917">arXiv:2005.01917</a>)</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article: 4 -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Autoformalization for the working mathematician</div>
+          <div class="article-date">update 8/17/2020</div>
+          <div class="article-content">
+            <p>This project is under development. With an interdisciplinary group of collaborators, I have designed a benchmark dataset that specifically targets a task that will be immediately useful for working mathematicians but is also challenging enough to be useful for machine learning researchers. Please email if you are interested in learning more or contributing.</p>
+            <p>The idea is that each datapoint will be a blueprint for the proof of a very challenging known result in research-level mathematics. The datapoint includes definition, lemma, and theorem statements in Lean4, and it includes proofs in natural language. The task is for the model to use the natural language arguments and the directed graph of logical dependencies between statements to fill in correct proofs in Lean4 for all missing proofs.</p>
+            <p><a href="https://github.com/DanielHL/autoformalization_pilot" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Github Repo →</a></p>
+          </div>
+        </div>
+
+        <!-- Article: 4 -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            [Paper Thumbnail Placeholder]
+          </div>
+          <div class="article-title">Gold-medal-level IMO performance with automated formal theorem proving</div>
+          <div class="article-date">update 8/17/2020</div>
+          <div class="article-content">
+            <p><p>I worked with the team at Harmonic.fun to develop their ``Aristotle" system to solve problems from the International Mathematical Olympiad. The system uses language models to do an enhanced tree search for proofs of lemma statements in Lean4. In July 2025, the system achieved a perfect score on 5 out of the 6 problems at IMO 2025, a gold-medal score. The system is still under development, but these results suggest that it has the potential to be a powerful tool for solving challenging mathematical problems.</p></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <a name="expository"></a>
+    <div class="padded">
+      <h2 align="center">Talks and expository writing</h2>
+      
+      <!-- Main Course Book -->
+      <div style="max-width: auto; margin: 0 auto 40px auto; padding: 25px; background: #f8f8f8; border-radius: 15px; border-left: 4px solid #f07057;">
+        <h3 style="color: #f07057; margin-top: 0; margin-bottom: 15px;"><a href="http://themoduli.space/" style="color: #f07057; text-decoration: none;">The Moduli Space</a> (web book)</h3>
+        <p style="margin-bottom: 15px; line-height: 1.6;">During the Spring 2020 term, I taught a graduate topics course on "Modern moduli theory," which I have reformatted into a web-based book.</p>
+        <p style="margin-bottom: 0; line-height: 1.6;">We surveyed the theory of algebraic stacks (fibered categories and descent, quasi-coherent sheaves, quotient stacks, deformation theory, and Artin's criteria, Tannaka duality), then discussed more recent advances (the etale local structure theorems of Alper, Hall, and Rydh, and the results of beyond GIT), and applied these methods to the moduli of vector bundles and principal G bundles over a smooth curve.</p>
+      </div>
+
+      <!-- Additional Resources Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 40px;">
+
+        <!-- HMS Talk -->
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #FF9800;">
+          <h4 style="color: #FF9800; margin-top: 0; margin-bottom: 15px;">Moduli of objects in dg-categories (2025)</h4>
+          <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">Talk at <a href="https://www.imsa.miami.edu/events/2025-spring-emphasis/hms-2025/index.html">Homological Mirror Symmetry conference</a> in honor of Maxim Kontsevich's 60th birthday. I use recent results in moduli theory to give an intrinsic formulation of homological mirror symmetry, and I introduce some conjectures in symplectic topology that would imply it.</p>
+          <a href="miami_dg_moduli_slides.pdf" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Slides →</a>
+        </div>
+
+        <!-- ICBS talk -->
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #607D8B;">
+          <h4 style="color: #607D8B; margin-top: 0; margin-bottom: 15px;">ICBS Talk (July 2024)</h4>
+          <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">A proceedings paper <em>On the structure of equivariant derived categories</em> for the 2024 International Congress of Basic Science, based on my acceptance talk for a Frontiers of Science Award.</p>
+          <a href="https://arxiv.org/abs/2410.10979" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a>
+        </div>
+        
+        <!-- Swiss Lectures -->
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #4CAF50;">
+          <h4 style="color: #4CAF50; margin-top: 0; margin-bottom: 15px;">Swiss Lectures (2017)</h4>
+          <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">Notes from lectures on Theta-stability and existence of good moduli spaces, with applications to Donaldson invariants.</p>
+          <div style="display: flex; gap: 15px;">
+            <a href="Swiss Lecture 1.pdf" style="color: #4CAF50; text-decoration: none; font-weight: bold;">Lecture 1</a>
+            <a href="Swiss Lecture 2.pdf" style="color: #4CAF50; text-decoration: none; font-weight: bold;">Lecture 2</a>
+          </div>
+        </div>
+
+        <!-- Colloquium Talk -->
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #2196F3;">
+          <h4 style="color: #2196F3; margin-top: 0; margin-bottom: 15px;">Colloquium Talk (2017)</h4>
+          <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">A colloquium-style slide talk on applications of beyond GIT to the D-equivalence conjecture.</p>
+          <a href="colloquium_derived_equivalences_2017_01.pdf" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Slides →</a>
+        </div>
+
+        <!-- AMS Proceedings -->
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #FF9800;">
+          <h4 style="color: #FF9800; margin-top: 0; margin-bottom: 15px;">AMS Proceedings (2015)</h4>
+          <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">Proceedings paper for the AMS summer algebraic geometry institute (SLC, 2015).</p>
+          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="theta_stratifications_revision_2017_02_21.pdf" style="color: #FF9800; text-decoration: none; font-weight: bold;">Paper</a>
+            <a href="https://utah.equella.ecollege.com/items/b76e80bc-fcf7-420c-a832-c08c43975e80/148/viewcontent?_sl.t=true" style="color: #FF9800; text-decoration: none; font-weight: bold;">Video</a>
+          </div>
+        </div>
+
+        <!-- IAS Lecture 
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #9C27B0;">
+          <h4 style="color: #9C27B0; margin-top: 0; margin-bottom: 15px;">IAS Member Lecture</h4>
+          <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">Short member lecture at the Institute for Advanced Study.</p>
+          <a href="https://www.youtube.com/watch?v=ow_WwZE1_2M" style="color: #9C27B0; text-decoration: none; font-weight: bold;">Watch Video →</a>
+        </div>-->
+
+        <!-- Oberwolfach Report -->
+        <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #607D8B;">
+          <h4 style="color: #607D8B; margin-top: 0; margin-bottom: 15px;">Oberwolfach Report</h4>
+          <p style="line-height: 1.6; color: #666; margin-bottom: 15px;"><em>Θ-reductive moduli problems, stratifications, and applications</em> - Brief report from Oberwolfach workshop.</p>
+          <a href="oberwolfach_abstract.pdf" style="color: #607D8B; text-decoration: none; font-weight: bold;">Read Report →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <a name="advising"></a>
+    <div class="padded">
+      <h2 align="center">Graduate advising</h2>
+      <div style="max-width: auto; margin: 0 auto 40px auto; padding: 20px; background: #f8f8f8; border-radius: 10px; border-left: 4px solid #f07057;">
+        <p style="margin-bottom: 0; line-height: 1.6;">I am currently accepting graduate advisees. If you are interested in working with me as your PhD advisor, please read my <a href="Phd_Plan.pdf">advising philosophy</a>, which sets mutual expectations.</p>
+      </div>
+
+      <!-- Graduate Students -->
+      <h3 align="center" style="color: #f07057; margin-bottom: 30px; font-size: 1.3em;">Recent Graduate Students</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
+        
+        <!-- Dylan Peifer -->
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+          <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="dylan-peifer.jpeg" width="80px" height="80px"></div>
+          <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Dylan Peifer</h4>
+          <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2021</p>
+          <a href="https://www.linkedin.com/in/dylanpeifer/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+        </div>
+
+        <!-- Andres Fernandez-Herrero -->
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+          <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="andres-fernandez-herrero.jpeg" width="80px" height="80px"></div>
+          <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Andres Fernandez-Herrero</h4>
+          <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2022</p>
+          <a href="https://web.sas.upenn.edu/andresfh/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+        </div>
+
+        <!-- Kimoi Kemboi -->
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+          <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="kimoi-kemboi.jpg" width="80px" height="80px"></div>
+          <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Kimoi Kemboi</h4>
+          <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2023</p>
+          <a href="https://kimoitoek.github.io/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+        </div>
+
+        <!-- Trevor Jones -->
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+          <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="trevor-jones.jpg" width="80px" height="80px"></div>
+          <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Trevor Jones</h4>
+          <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2025</p>
+          <a href="https://mathematics.jhu.edu/people/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+        </div>
+
+        <!-- Alekos Robotis -->
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+          <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="antonios-alexandros-robotis.jpg" width="80px" height="80px"></div>
+          <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Alekos Robotis</h4>
+          <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2025</p>
+          <a href="https://aarobotis.github.io/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+        </div>
+
+        <!-- Jeffrey Jiang -->
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+          <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="jeffrey-jiang.jpg" width="80px" height="80px"></div>
+          <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Jeffrey Jiang</h4>
+          <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">MS 2022</p>
+          <!--<a href="#" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>-->
+        </div>
+
+        <!-- Sara Stephens -->
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+          <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="sara-stephens.jpg" width="80px" height="80px"></div>
+          <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Sara Stephens</h4>
+          <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">Current Student</p>
+          <a href="#" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+        </div>
+
+        <!-- Mingjun Sun -->
+        <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+          <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;">Photo</div>
+          <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Mingjun Sun</h4>
+          <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">Current Student</p>
+          <a href="#" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <a name="beyondGIT"></a>
+    <div class="padded">
+      <h2 align="center">Beyond geometric invariant theory concept map</h2>
+      <div style="max-width: auto; margin: 0 auto 40px auto; padding: 20px; background: #f8f8f8; border-radius: 10px; border-left: 4px solid #f07057;">
+        <p style="margin-bottom: 0; line-height: 1.6;">One of the great challenges of research mathematics is effectively communicating mathematical ideas. In 2016, I created this concept map describing the "beyond GIT" project at the time. It needs updating, but it's a good starting point. Notably absent are the theorem on existence of good moduli spaces, and applications to the moduli of K-semistable Fano varieties.</p>
+        <img style="margin:auto;display:block;" src="beyond_GIT_map_grey.png" usemap="#beyondGIT" width="885px" height="1135px">
+        <map name="beyondGIT">
+          <!--concepts around categorically proper stacks-->
+          <area shape="rect" coords="449,46,629,119" id="proper">
+          <area shape="rect" coords="614,737,794,811" id="hodge">
+          <area shape="rect" coords="449,176,628,248" id="mapping">
+          <!--concepts around theta stratifications-->
+          <area shape="rect" coords="134,176,315,248" id="theta">
+          <area shape="rect" coords="1,364,179,437" id="reductive">
+          <area shape="rect" coords="292,364,471,438" id="buildings">
+          <!--concepts around derived Kirwan surjectivity-->
+          <area shape="rect" coords="601,476,800,551" id="invariants">
+          <area shape="rect" coords="27,952,225,1025" id="monodromy">
+          <area shape="rect" coords="64,515,471,604" id="structure">
+          <area shape="rect" coords="551,1027,731,1101" id="verlinde">
+          <area shape="rect" coords="303,952,483,1026" id="localization">
+          <area shape="rect" coords="646,875,867,949" id="surjectivity">
+          <area shape="rect" coords="288,839,539,915" id="yangians">
+          <area shape="rect" coords="24,825,229,899" id="equivalences">
+        </map>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery and JavaScript for functionality -->
+  <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+  <script>
+    var mn = $(".navbar");
+    mns = "navbar-scrolled";
+    hdr = $('header').height();
+
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > hdr) {
+        mn.addClass(mns);
+        $('header').addClass('navbar-scrolled');
+      } else {
+        mn.removeClass(mns);
+        $('header').removeClass('navbar-scrolled');
+      }
+    });
+
+    // Function to toggle article expansion
+    function toggleArticle(element) {
+      const isCurrentlyExpanded = element.classList.contains('expanded');
+
+      // Remove expanded class from all bubbles and hide any existing expanded content
+      document.querySelectorAll('.article-bubble').forEach(bubble => {
+        bubble.classList.remove('expanded', 'article-placeholder');
+      });
+
+      // Remove any existing expanded content
+      const existingExpanded = document.querySelector('.expanded-content-row');
+      if (existingExpanded) {
+        existingExpanded.remove();
+      }
+
+      // If this article wasn't expanded, expand it
+      if (!isCurrentlyExpanded) {
+        // Add placeholder effect to other bubbles
+        document.querySelectorAll('.article-bubble').forEach(bubble => {
+          if (bubble !== element) {
+            bubble.classList.add('article-placeholder');
+          }
+        });
+
+        // Add expanded class to clicked bubble
+        element.classList.add('expanded');
+
+        // Ensure the article-content exists
+        const articleContent = element.querySelector('.article-content');
+        if (!articleContent) {
+          console.error('Article content not found for the selected bubble.');
+          return;
+        }
+
+        // Create expanded content row
+        const expandedRow = document.createElement('div');
+        expandedRow.className = 'expanded-content-row';
+        expandedRow.innerHTML = `
+          <div class="expanded-content-container show">
+            <div class="expanded-content-inner">${articleContent.innerHTML}</div>
+          </div>
+        `;
+
+        // Find the correct articles-container for the clicked article
+        const container = element.closest('.articles-container'); // Dynamically find the closest container
+        if (!container) {
+          console.error('Articles container not found for the clicked article.');
+          return;
+        }
+
+        const articles = Array.from(container.querySelectorAll('.article-bubble'));
+        const clickedIndex = articles.indexOf(element);
+
+        if (clickedIndex === -1) {
+          console.error('Could not find the clicked article in the articles list.');
+          return;
+        }
+
+        // Calculate which row this article is in
+        const containerRect = container.getBoundingClientRect();
+        const clickedRect = element.getBoundingClientRect();
+        const clickedRow = Math.floor(clickedRect.top - containerRect.top);
+
+        // Find the last article in the same row
+        let lastInRow = clickedIndex;
+        for (let i = clickedIndex + 1; i < articles.length; i++) {
+          const articleRect = articles[i].getBoundingClientRect();
+          const articleRow = Math.floor(articleRect.top - containerRect.top);
+          if (Math.abs(articleRow - clickedRow) > 10) { // 10px tolerance for row detection
+            break;
+          }
+          lastInRow = i;
+        }
+
+        const insertAfter = articles[lastInRow];
+        if (!insertAfter || !insertAfter.parentNode) {
+          console.error('Parent node not found for the clicked article.');
+          return;
+        }
+
+        // Insert the expanded content after the last article in the row
+        insertAfter.parentNode.insertBefore(expandedRow, insertAfter.nextSibling);
+
+        // Scroll to expanded content
+        expandedRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Handle window resize to ensure proper layout
+    function handleResize() {
+      // Force a reflow to ensure grid recalculates
+      const container = document.querySelector('.articles-container');
+      if (container) {
+        container.style.display = 'none';
+        container.offsetHeight; // Trigger reflow
+        container.style.display = 'grid';
+      }
+    }
+
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+
+    // Function to scroll to theme sections
+    function scrollToSection(themeId) {
+      const element = document.getElementById(themeId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+
+</body>
+
+</html>
