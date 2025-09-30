@@ -118,6 +118,8 @@
       padding: 20px;
       max-width: 1400px;
       margin: 0 auto;
+      min-height: 0;
+      align-items: stretch;
     }
 
     @media (max-width: 768px) {
@@ -157,6 +159,9 @@
       cursor: pointer;
       transition: all 0.3s ease;
       border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .article-bubble:hover {
@@ -195,6 +200,8 @@
       color: #666;
       font-style: italic;
       margin-bottom: 15px;
+      overflow: hidden;
+      text-align: center;
     }
 
     .article-title {
@@ -241,7 +248,9 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       padding: 25px;
       border: 2px solid #f07057;
-      max-width: 800px;
+      max-width: 1200px;
+      min-width: 75vw;
+      width: 75vw;
       margin: 0 auto;
     }
 
@@ -344,7 +353,7 @@
                       <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
                           <span style="position: absolute; left: 0; color: #f07057;">•</span>
-                          <strong>New Paper:</strong> <em>A categorical perspective on non-abelian localization.</em> (Sept. 20215) Develops a new method to study the derived category of quasi-coherent sheaves on stacks with a $\Theta$-stratification, with applications to enumerative geometry.
+                          <strong>New Paper:</strong> <em>A categorical perspective on non-abelian localization.</em> (Sept. 2025) Develops a new method to study the derived category of quasi-coherent sheaves on stacks with a $\Theta$-stratification, with applications to enumerative geometry.
                           <p><a href="http://arxiv.org/abs/2509.24009" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Paper →</a></p>
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
@@ -424,13 +433,13 @@
       <h3 id="theme1" align="center" style="color: #f07057; margin: 50px 0 30px 0; font-size: 1.3em; padding-top: 20px;">Moduli Theory, Beyond GIT</h3>
       <div class="articles-container">
         
-        <!-- Article 1 -->
+        <!-- Article: On the structure of instability in moduli theory -->
         <div class="article-bubble" onclick="toggleArticle(this)">
           <div class="article-thumbnail">
             <img src="thumbnail_instability.png" class="responsive-img" alt="Thumbnail">
           </div>
           <div class="article-title">Towards a general theory of instability in moduli theory</div>
-          <div class="article-date">updated 6/18/2021</div>
+          <div class="article-date">updated 2/2/2022</div>
           <div class="article-content">
             <p>A common kind of problem in algebraic geometry is to find a space, called a moduli space, parameterizing isomorphism classes of some kind of algebro-geometric objects -- let's call them widgets. Many attempts to form a moduli space for widgets proceed by finding a scheme, $X$, which parameterizes a family of widgets, and an algebraic group, $G$, acting on $X$ such that points in the same orbit under $G$ parameterize isomorphic widgets. Then hopefully one can apply geometric invariant theory to find an open subset in X which has a good quotient under the action of $G$, and whose $G$-orbits classify ``semistable'' widgets. However, there are many situations where a stability condition can be specified on widgets without referring to any GIT problem. We discuss a framework for defining a notion of semistability for an arbitrary moduli problem, and we introduce a structure on the unstable locus, which we call a Theta-stratification, which generalizes classical stratifications of the unstable locus in GIT as well as of the moduli of vector bundles on a curve. We identify a class of moduli problems, which we call $\Theta$-reductive, for which the GIT story carries over nicely into this more general framework -- for these stacks the existence of a $\Theta$-stratification on the unstable locus can be reduced to checking a relatively simple hypothesis.</p>
             <ul>
@@ -440,32 +449,93 @@
           </div>
         </div>
 
-        <!-- Article 3 -->
+        <!-- Article: Branchvarieties -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            <img src="thumbnail_component_lattice.PNG" class="responsive-img" alt="Thumbnail">
+          </div>
+          <div class="article-title">Intrinsic Donaldson-Thomas theory. I. Component lattices of stacks</div>
+          <div class="article-date">update 9/11/25</div>
+          <div class="article-content">
+            <p>Joint with Chenjing Bu, Andrés Ibáñez Núñez, and Tasuki Kinjo. This is the first, more foundational, part of a series of papers by my coauthors (not me) attempting to generalize Joyce's wall-crossing formalism from the context of objects in abelian categories to much more general moduli stacks.</p>
+            <p>Abstract: This is the first paper in a series on intrinsic Donaldson-Thomas theory, where we develop a new framework for enumerative geometry that allows the generalization of constructions and results from linear moduli stacks to general non-linear algebraic stacks.
+            
+            In this paper, we introduce the component lattice of an algebraic stack. This is a key object in our theory, defined using the formalism of stacks of graded and filtered points. It provides the combinatorial data needed to formulate various results in enumerative geometry, such as decomposition-type theorems and wall-crossing formulae. Later papers in the series will focus on extending Donaldson-Thomas theory to the non-linear case, and we expect that our approach will be useful for extending many other flavours of enumerative invariants beyond the linear case as well.
+            
+            This paper proves several foundational results of our framework. The first is the constancy theorem, which states that the isomorphism types of connected components of the stacks of graded and filtered points stay constant within chambers in the component lattice. The second is the finiteness theorem, which provides a criterion for the finiteness of the number of possible isomorphism types of these components. The third is the associativity theorem, generalizing the structure of Hall algebras from linear stacks to general stacks.
+            
+            We also discuss some applications of these results outside Donaldson-Thomas theory, including a construction of stacks of real-weighted filtrations, and a generalization of the semistable reduction theorem to real-weighted filtrations.</p>
+            <p><a href="https://arxiv.org/abs/2502.13892" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+          </div>
+        </div>
+
+        <!-- Article: Branchvarieties -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            <img src="thumbnail_branch.PNG" class="responsive-img" alt="Thumbnail">
+          </div>
+          <div class="article-title">Projectivity of the moduli of equidimensional branchvarieties</div>
+          <div class="article-date">update 5/15/25</div>
+          <div class="article-content">
+            <p>Joint with Andres Fernandez Herrero, Trevor Jones, and Ritvik Ramkumar, I investigated alternative approaches to constructing moduli of polarized varieties using geometric invariant theory on moduli spaces of branchvarieties. These moduli spaces provide alternatives to Hilbert schemes.</p>
+            <p>Abstract: We resolve an open problem posed by Alexeev-Knutson on the projectivity of the moduli of branchvarieties in the equidimensional case. As an application, we construct projective moduli spaces of reduced equidimensional varieties equipped with ample linear series and subject to a semistability condition.</p>
+            <p><a href="https://arxiv.org/abs/2410.10753" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+          </div>
+        </div>
+
+        <!-- Article: Artin algebraization for pairs with applications to the local structure of stacks and Ferrand pushouts -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            <img src="thumbnail_artin_approx.PNG" class="responsive-img" alt="Thumbnail">
+          </div>
+          <div class="article-title">Artin algebraization for pairs with applications to the local structure of stacks and Ferrand pushouts</div>
+          <div class="article-date">update 5/17/22</div>
+          <div class="article-content">
+            <p>We give a variant of Artin algebraization along closed subschemes and closed substacks. Our main application is the existence of étale, smooth, or syntomic neighborhoods of closed subschemes and closed substacks. In particular, we prove local structure theorems for stacks and their derived counterparts and the existence of henselizations along linearly fundamental closed substacks. These results establish the existence of Ferrand pushouts, which answers positively a question of Temkin-Tyomkin.</p>
+            <p><a href="https://arxiv.org/abs/2205.08623" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+          </div>
+        </div>
+
+        <!-- Article: Infinite dimensional GIT -->
         <div class="article-bubble" onclick="toggleArticle(this)">
           <div class="article-thumbnail">
             [Paper Thumbnail Placeholder]
           </div>
-          <div class="article-title">On properness of $K$-moduli spaces and optimal degenerations of Fano varieties</div>
-          <div class="article-date">update 11/03/20</div>
+          <div class="article-title">Infinite dimensional GIT</div>
+          <div class="article-date">updated 2/2/2024</div>
           <div class="article-content">
-            <p>We establish an algebraic approach to prove the properness of moduli spaces of K-polystable Fano varieties and reduce the problem to a conjecture on destabilizations of K-unstable Fano varieties. Specifically, we prove that if the stability threshold of every K-unstable Fano variety is computed by a divisorial valuation, then such K-moduli spaces are proper. The argument relies on studying certain optimal destabilizing test configurations and constructing a Theta-stratification on the moduli stack of Fano varieties.</p>
+            <p>Given a numerical invariant on an algebraic stack, the general theory of $\Theta$-stability provides criteria that imply that the numerical invariant defines a $\Theta$-stratification, and that the semistable locus admits a good moduli space. The first criterion is called "monotonicity", and the second is called "HN boundedness." In the projects below, joint with Andres Fernandez-Herror and Trevor Jones, I developed a method for verifying monotonicity that is an infinite-dimensional analog of geometric invariant theory, in that it applies (roughly speaking) to ind-algebraic groups acting on ind-projective ind-schemes. In the second project, we apply this method and develop a new method for verifying HN-boundedness for the stack of maps from a smooth curve to a quotient stack.</p>
             <ul>
-              <li><em>"On properness of $K$-moduli spaces and optimal degenerations of Fano varieties" with Harold Blum, Yuchen Liu, and Chenyang Xu (<a href="https://arxiv.org/abs/2011.01895">arXiv:2011.01895</a>)</em></li>
+              <li>
+                <em>"Moduli spaces of sheaves via affine Grassmannians"</em> with Andres Fernandez Herrero and Trevor Jones: We develop a new method for analyzing moduli problems related to the stack of pure coherent sheaves on a polarized family of projective schemes. It is an infinite-dimensional analogue of geometric invariant theory. We apply this to two familiar moduli problems: the stack of -modules and the stack of pairs. In both examples, we construct a -stratification of the stack, defined in terms of a polynomial numerical invariant, and we construct good moduli spaces for the open substacks of semistable points. One of the essential ingredients is the construction of higher dimensional analogues of the affine Grassmannian for the moduli problems considered.
+                <p><a href="https://arxiv.org/abs/2107.02172" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+              </li>
+              <li>
+                <em>"The structure of the moduli of gauged maps from a smooth curve"</em> with Andres Fernandez Herrero: For a reductive group $G$, Harder-Narasimhan theory gives a structure theorem for principal $G$ bundles on a smooth projective curve $C$. A bundle is either semistable, or it admits a canonical parabolic reduction whose associated Levi bundle is semistable. We extend this structure theorem by constructing a $\Theta$-stratification of the moduli stack of gauged maps from $C$ to a projective-over-affine $G$-variety $X$. The open stratum coincides with the previously studied moduli of Mundet semistable maps, and in special cases coincides with the moduli of stable quasi-maps. As an application of the stratification, we provide a formula for K-theoretic gauged Gromov-Witten invariants when $X$ is an arbitrary linear representation of $G$. This can be viewed as a generalization of the Verlinde formula for moduli spaces of decorated principal bundles. We establish our main technical results for smooth families of curves over an arbitrary Noetherian base. Our proof develops an infinite-dimensional analog of geometric invariant theory and applies the theory of optimization on degeneration fans.
+                <p><a href="https://arxiv.org/abs/2305.09632" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+              </li>
             </ul>
           </div>
         </div>
-        
-        <!-- Article 5 -->
+
+        <!-- Article: K-module -->
         <div class="article-bubble" onclick="toggleArticle(this)">
           <div class="article-thumbnail">
             [Paper Thumbnail Placeholder]
           </div>
-          <div class="article-title">Reductivity of the automorphism group of K-polystable Fano varieties</div>
-          <div class="article-date">update 7/28/2020</div>
+          <div class="article-title">Moduli of $K$-semistable Fano varieties</div>
+          <div class="article-date">update 11/03/20</div>
           <div class="article-content">
-            <p>We prove that K-polystable log Fano pairs have reductive automorphism groups. In fact, we deduce this statement by establishing more general results concerning the S-completeness and $\Theta$-reductivity of the moduli of K-semistable log Fano pairs. Assuming the conjecture that K-semistability is an open condition, we prove that the Artin stack parametrizing K-semistable Fano varieties admits a separated good moduli space.</p>
+            <p>There is a notion of K-stability for Fano varieties, which arose in the study of canonical Kaehler metrics in differential geometry. The ``Donaldson-Tian-Yau'' conjecture predicted that a Fano manifold admits a constant scalar curvature Kaehler metric if and only if it is K-polystable, and it was recently proved by Chen-Donaldson-Sun. K-stability is very naturally an instance of $\Theta$-stability, and it turns out that the beyond GIT framework works very nicely for the stack of Fano varieties (with klt singularities), eventually giving a $\Theta$-stratification and good moduli space for the semistable locus. I collaborated on two pieces of this story:</p>
             <ul>
-              <li><em>"Reductivity of the automorphism group of K-polystable Fano varieties" with Jarod Alper, Harold Blum, and Chenyang Xu (<a href="https://arxiv.org/abs/1906.03122">arXiv:1906.03122</a>)</em></li>
+              <li>
+                <em>"On properness of $K$-moduli spaces and optimal degenerations of Fano varieties"</em> with Harold Blum, Yuchen Liu, and Chenyang Xu: We establish an algebraic approach to prove the properness of moduli spaces of K-polystable Fano varieties and reduce the problem to a conjecture on destabilizations of K-unstable Fano varieties. Specifically, we prove that if the stability threshold of every K-unstable Fano variety is computed by a divisorial valuation, then such K-moduli spaces are proper. The argument relies on studying certain optimal destabilizing test configurations and constructing a Theta-stratification on the moduli stack of Fano varieties.
+                <p><a href="https://arxiv.org/abs/2011.01895" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+              </li>
+              <li>
+                <em>"Reductivity of the automorphism group of K-polystable Fano varieties"</em> with Jarod Alper, Harold Blum, and Chenyang Xu: We prove that K-polystable log Fano pairs have reductive automorphism groups. In fact, we deduce this statement by establishing more general results concerning the S-completeness and $\Theta$-reductivity of the moduli of K-semistable log Fano pairs. Assuming the conjecture that K-semistability is an open condition, we prove that the Artin stack parametrizing K-semistable Fano varieties admits a separated good moduli space.
+                <p><a href="https://arxiv.org/abs/1906.03122" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+              </li>
             </ul>
           </div>
         </div>
@@ -488,7 +558,7 @@
         <!-- Article 7 -->
         <div class="article-bubble" onclick="toggleArticle(this)">
           <div class="article-thumbnail">
-            [Paper Thumbnail Placeholder]
+            <img src="thumbnail_cartan.PNG" class="responsive-img" alt="Thumbnail">
           </div>
           <div class="article-title">Cartan-Iwahori-Matsumoto decompositions for reductive groups</div>
           <div class="article-date">update 3/1/2019</div>
@@ -528,8 +598,6 @@
               "Tannaka duality revisited" with Bhargav Bhatt (<a href="http://arxiv.org/abs/1507.01925">arxiv:1507.01925</a>)
             </p>
           </div>
-
-
         </div>
       </div>
 
@@ -550,6 +618,59 @@
               Original draft version: <a href="localization_2016_08_28.pdf">"A categorification of the Atiyah-Bott localization formula</a>; last update 5/21/2016
               Final version, on arXiv: <a href="http://arxiv.org/abs/2509.24009">A categorical perspective on non-abelian localization</a>
             </p>
+          </div>
+        </div>
+
+        <!-- Article: Artin algebraization for pairs with applications to the local structure of stacks and Ferrand pushouts -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            <img src="thumbnail_stability_manifold.PNG" class="responsive-img" alt="Thumbnail">
+          </div>
+          <div class="article-title">The boundary of the stability manifold</div>
+          <div class="article-date">update 1/1/25</div>
+          <div class="article-content">
+            In several projects, I have studied a partial compactification of the space of Bridgeland stability conditions on a triangulated category, called the space of augmented stability conditions. It has lead to some insights -- the conjecture that this space is a manifold with corners for smooth and proper dg-categories implies very broad existence results for proper moduli spaces of semsitable objects in those categories.
+            <ul>
+              <li>
+                <em>"The space of augmented stability conditions"</em> with Alekos Robotis: Given a triangulated category $\mathcal{C}$, we construct a partial compactification, de\-noted $Astab(\mathcal{C})$, of the quotient of its stability manifold by $\bC$. The purpose of $\Astab(\mathcal{C})$ is to shed light on the structure of semiorthogonal decompositions of $\mathcal{C}$.
+    
+                A point of $Astab(\mathcal{C})$, called an augmented stability condition on $\mathcal{C}$, consists of a newly introduced homological structure called a multi-scale decomposition, along with stability conditions on subquotient categories of $\mathcal{C}$ associated to this multi-scale decomposition. A generic multi-scale decomposition corresponds to a semiorthogonal decomposition along with a configuration of points in $\bC$.
+    
+                We give a conjectural description of open neighborhoods of certain boundary points, called the \emph{manifold-with-corners conjecture}, and we prove it in a special case. We show that this conjecture implies the existence of proper good moduli spaces of Bridgeland semistable objects in $\mathcal{C}$ when $\mathcal{C}$ is smooth and proper, and discuss some first examples where the manifold-with-corners conjecture holds.
+                <p><a href="https://arxiv.org/abs/2501.00710" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+              </li>
+              <li>
+                <em>"Stability conditions and semiorthogonal decompositions I: quasi-convergence"</em> with Jeffrey Jiang and Alekos Robotis: We develop a framework relating semiorthogonal de-compositions of a triangulated category $\mathcal{C}$ to paths in its space of stability conditions. We prove that when $\mathcal{C}$ is the homotopy category of a smooth and proper idempotent complete pre-triang\-ulated dg-category, every semiorthogonal decomposition whose fac\-tors admit a Bridgeland stability condition can be obtained from our framework.
+                <p><a href="https://arxiv.org/abs/2401.00600" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Article: Noncommutative MMP -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            <img src="thumbnail_nmmp.PNG" class="responsive-img" alt="Thumbnail">
+          </div>
+          <div class="article-title">The noncommutative minimal model program</div>
+          <div class="article-date">update 3/27/24</div>
+          <div class="article-content">
+            <p>This note aims to clarify the deep relationship between birational modifications of a variety and semiorthogonal decompositions of its derived category of coherent sheaves. The result is a conjecture on the existence and properties of canonical semiorthogonal decompositions, which is a noncommutative analog of the minimal model program. We identify a mechanism for constructing semiorthogonal decompositions using Bridgeland stability conditions, and we propose that through this mechanism the quantum differential equation of the variety controls the conjectured semiorthogonal decompositions. We establish several implications of the conjectures: one direction of Dubrovin's conjecture on the existence of full exceptional collections; the $D$-equivalence conjecture; the existence of new categorical birational invariants for varieties of positive genus; and the existence of minimal noncommutative resolutions of singular varieties. Finally, we verify the conjectures for smooth projective curves by establishing a previously conjectured description of the stability manifold of $\mathbb{P}^1$.</p>
+            <p><a href="https://arxiv.org/abs/2301.13168" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+          </div>
+        </div>
+
+        <!-- Article: Full exceptional collections of vector bundles on rank-two linear GIT quotients -->
+        <div class="article-bubble" onclick="toggleArticle(this)">
+          <div class="article-thumbnail">
+            <img src="thumbnail_rank_2_git.PNG" class="responsive-img" alt="Thumbnail">
+          </div>
+          <div class="article-title">Full exceptional collections on GIT quotients</div>
+          <div class="article-date">update 2/25/22</div>
+          <div class="article-content">
+            <p>Joint with Kimoi Kemboi.</p>
+            <p>We produce full strong exceptional collections consisting of vector bundles on the geometric invariant theory quotient of certain linear actions of a split reductive group $G$ of rank two. The vector bundles correspond to irreducible $G$-representations whose weights lie in an explicit bounded region in the weight space of $G$. We also describe a method for constructing more examples of linear GIT quotients with full strong exceptional collections of this kind as ``decorated" quiver varieties.</p>
+            <p><a href="https://arxiv.org/abs/2202.12876" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
           </div>
         </div>
 
@@ -986,19 +1107,27 @@
         insertAfter.parentNode.insertBefore(expandedRow, insertAfter.nextSibling);
 
         // Scroll to expanded content
-        expandedRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Scroll to expanded content with offset so previous bubble is visible
+        // Offset by 50% of the height of a standard article bubble
+        const sampleBubble = document.querySelector('.article-bubble');
+        let offset = 0;
+        if (sampleBubble) {
+          offset = -0.75 * sampleBubble.getBoundingClientRect().height;
+        }
+        const y = expandedRow.getBoundingClientRect().top + window.pageYOffset + offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }
 
     // Handle window resize to ensure proper layout
     function handleResize() {
-      // Force a reflow to ensure grid recalculates
-      const container = document.querySelector('.articles-container');
-      if (container) {
+      // Force a reflow to ensure grid recalculates for all article containers
+      const containers = document.querySelectorAll('.articles-container');
+      containers.forEach(container => {
         container.style.display = 'none';
         container.offsetHeight; // Trigger reflow
         container.style.display = 'grid';
-      }
+      });
     }
 
     // Add resize listener
