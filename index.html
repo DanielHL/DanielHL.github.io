@@ -265,6 +265,13 @@
     .article-content li {
       margin-bottom: 8px;
     }
+
+    .responsive-img {
+      max-width: 100%; /* Ensures the image does not exceed the container's width */
+      height: auto;    /* Maintains the aspect ratio */
+      display: block;  /* Removes any inline spacing */
+      margin: 0 auto;  /* Centers the image horizontally if needed */
+    }
   </style>
 
   <!--MathJax settings-->
@@ -420,7 +427,7 @@
         <!-- Article 1 -->
         <div class="article-bubble" onclick="toggleArticle(this)">
           <div class="article-thumbnail">
-            [Paper Thumbnail Placeholder]
+            <img src="thumbnail_instability.png" class="responsive-img" alt="Thumbnail">
           </div>
           <div class="article-title">Towards a general theory of instability in moduli theory</div>
           <div class="article-date">updated 6/18/2021</div>
@@ -511,7 +518,7 @@
         <!-- Article: Tannaka duality revisited -->
         <div class="article-bubble" onclick="toggleArticle(this)">
           <div class="article-thumbnail">
-            [Paper Thumbnail Placeholder]
+            <img src="thumbnail_tannaka.png" class="responsive-img" alt="Thumbnail">
           </div>
           <div class="article-title">Tannaka duality revisited</div>
           <div class="article-date">update 7/05/15</div>
