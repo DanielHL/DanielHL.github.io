@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
+  <meta name="description" content="Math+AI at Cornell: research lab connecting mathematics and artificial intelligence." />
+  <title>Math+AI at Cornell</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f2f2e8;
+    }
+
+    header {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #000000;
+      color: #f0f0f0;
+    }
+
+    .header-image-container {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 20px;
+    }
+
+    .header-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 5px 0 0 0;
+      max-width: 520px;
+      font-size: 0.95rem;
+    }
+
+    .header-tagline {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .header-links a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .header-links a:hover {
+      text-decoration: underline;
+    }
+
+    .main {
+      position: relative;
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 20px;
+        height: auto;
+      }
+    }
+
+    .main {
+      background: #f2f2e8;
+    }
+
+    .padded {
+      padding: 70px 40px 50px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: Verdana, Geneva, sans-serif;
+      color: #333;
+      margin-top: 0;
+    }
+
+    h3 {
+      font-family: Verdana, Geneva, sans-serif;
+      color: #f07057;
+      margin-top: 30px;
+    }
+
+    /* Standardized link styles (matching index.html) */
+    a.paper-link {
+      color: #607D8B;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a.paper-link:hover {
+      text-decoration: underline;
+    }
+
+    a.pdf-link {
+      color: #f07057;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a.pdf-link:hover {
+      text-decoration: underline;
+    }
+
+    a.resource-link {
+      color: #2196F3;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a.resource-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Projects layout */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+      border-top: 4px solid #f07057;
+    }
+
+    .project-title {
+      font-weight: bold;
+      font-size: 1.05rem;
+      margin: 0 0 8px 0;
+      color: #333;
+    }
+
+    .project-meta {
+      font-size: 0.9rem;
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    .project-meta strong {
+      font-weight: 600;
+    }
+
+    .project-description {
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-image-container">
+      <img src="2pnfjg2pnfjg2pnf.png" alt="Math+AI @ Cornell" class="header-image">
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="padded">
+      <h2>About the lab</h2>
+      <p>
+        The laboratory consists of several research groups working on learning and research projects on topics such as automated theorem proving,
+        math for AI safety, ML for mathematical modeling, or mathematical foundations of ML. Each group
+        typically has 3–6 people at a mix of levels (undergraduates, graduate students, postdocs, and faculty), with
+        1–3 mentors per group. Periodically, groups make short presentations to the whole lab on what they have learned
+        or discovered.
+      </p>
+
+      <h2>Organizers</h2>
+      <ul>
+        <li>Daniel Halpern-Leistner – <a href="https://danielhl.github.io/" class="resource-link">homepage</a></li>
+        <li>Lionel Levine – <a href="https://pi.math.cornell.edu/~levine/" class="resource-link">homepage</a></li>
+        <li>Alex Townsend – <a href="https://pi.math.cornell.edu/~ajt/" class="resource-link">homepage</a></li>
+        <li>Ziv Goldfeld – <a href="https://people.ece.cornell.edu/zivg/" class="resource-link">homepage</a></li>
+      </ul>
+
+      <h2>Spring 2026 Projects</h2>
+
+      <div class="projects-container">
+        <!-- 1) Latent reasoning models -->
+        <div class="project-card">
+          <div class="project-title">Latent reasoning models</div>
+          <div class="project-meta"><strong>Mentors:</strong> Daniel Halpern-Leistner, Gabe Udell</div>
+          <div class="project-meta"><strong>Participants:</strong> Jeffrey Huang, Weijie Zhou, Arya Datla, Kabir Rakshe</div>
+          <p class="project-description">
+            There has been recent work modifying the architecture of large language models so that they can reason
+            entirely in a space of latent variables, as opposed to reasoning through text. This project aims to
+            understand that work better and to explore, more generally, models whose output is the result of a dynamical
+            process, rather than a fixed-length computation.
+          </p>
+        </div>
+
+        <!-- 2) Autoformalization benchmark for the working mathematician -->
+        <div class="project-card">
+          <div class="project-title">Autoformalization benchmark for the working mathematician</div>
+          <div class="project-meta"><strong>Mentors:</strong> Daniel Halpern-Leistner, Hanxi (Gary) Chen, Xiaodong Cao, Linyue Xu</div>
+          <div class="project-meta"><strong>Participants:</strong> Leo Chang, Konrad Hartung, Rose Xu</div>
+          <p class="project-description">
+            This project will develop a benchmarking task for applying AI to formalization of mathematics in Lean. The
+            benchmark will be very challenging (to appeal to ML researchers), will involve research-level mathematics,
+            and will focus on autoformalization—converting natural language statements and proofs into Lean code—as
+            opposed to black-box automated theorem proving. The philosophy behind the project is explained in a separate
+            note (link forthcoming).
+          </p>
+        </div>
+
+        <!-- 3) Reverse proof search -->
+        <div class="project-card">
+          <div class="project-title">Reverse proof search</div>
+          <div class="project-meta"><strong>Mentors:</strong> Daniel Halpern-Leistner, Paramjyoti Mohapatra, Raj Gandhi</div>
+          <div class="project-meta"><strong>Participants:</strong> Will Li, Olga Zhukova, Jaithra Nagindas</div>
+          <p class="project-description">
+            Automated theorem proving methods mostly use reinforcement learning to guide step-wise theorem proving in a
+            formally verifiable language (like Lean), or try to generate a formal proof all at once with an LLM. This
+            project investigates using tree search in a way closer to how people find proofs: identify a sequence of
+            intermediate facts that would verifiably imply the result and seem easier to prove, then iteratively prove
+            these simpler claims.
+          </p>
+        </div>
+
+        <!-- 4) Rational Neural Networks for Learning Singular Structure -->
+        <div class="project-card">
+          <div class="project-title">Rational neural networks for learning singular structure</div>
+          <div class="project-meta"><strong>Mentors:</strong> Alex Townsend, John Guckenheimer</div>
+          <div class="project-meta"><strong>Participants:</strong> Jess Wang, Milo Schlittgen-Li, Andrew Park, Evan Manolis</div>
+          <p class="project-description">
+            Standard neural networks approximate functions using compositions of smooth or piecewise-linear
+            nonlinearities, which are poorly suited for representing sharp transitions, boundary layers, or near-singular
+            behavior. Rational neural networks replace standard activations with rational functions (ratios of
+            polynomials). This project studies rational neural networks as a mathematically structured alternative to
+            standard architectures, with the goal of understanding when and why rational networks outperform classical
+            neural networks, and how their learned poles relate to the analytic structure of the target function or
+            operator.
+          </p>
+        </div>
+
+        <!-- 5) Information-Theoretic Limits of Learning via Fano’s Inequality -->
+        <div class="project-card">
+          <div class="project-title">Information-theoretic limits of learning via Fano’s inequality</div>
+          <div class="project-meta"><strong>Mentors:</strong> Alex Townsend, Diego Balam Sanchez Espinosa</div>
+          <div class="project-meta"><strong>Participants:</strong> Caleb Shim, Yafet Negash, Tinkey Yu</div>
+          <p class="project-description">
+            Modern AI systems are often evaluated by empirical performance, yet many learning tasks are fundamentally
+            limited by the amount of information available in the data. Information-theoretic tools such as Fano’s
+            inequality provide rigorous lower bounds on what any algorithm can possibly learn, regardless of
+            architecture or optimization. This project studies and extends information-theoretic lower bounds for
+            learning operators and models from data, with the goal of understanding when learning is provably impossible
+            or requires an infeasible number of samples, even for idealized learners.
+          </p>
+        </div>
+
+        <!-- 6) Can AI Coding Agents Translate a Scientific Software Library? -->
+        <div class="project-card">
+          <div class="project-title">Can AI coding agents translate a scientific software library?</div>
+          <div class="project-meta"><strong>Mentors:</strong> Alex Townsend, Vaibhav Mehta</div>
+          <div class="project-meta"><strong>Participants:</strong> Lily Saada, Elinor Tu, Gordon Mei, Michael Sidoti</div>
+          <p class="project-description">
+            AI coding agents (e.g. Codex-style systems) promise to automate large-scale software development, but it
+            remains unclear whether they are reliable enough for serious scientific computing. This project tests these
+            claims by attempting a systematic translation of Chebfun, a mature MATLAB library for numerical computing
+            with functions, into Python. Rather than manually rewriting code, the goal is to use AI coding agents as the
+            primary developer, with humans acting as supervisors, reviewers, and experiment designers, treating Chebfun
+            as a controlled testbed for evaluating the strengths and limitations of AI-assisted code generation.
+          </p>
+        </div>
+
+        <!-- 7) Measuring AI motivations -->
+        <div class="project-card">
+          <div class="project-title">Measuring AI motivations</div>
+          <div class="project-meta"><strong>Mentors:</strong> Lionel Levine, Chuwen Wang</div>
+          <div class="project-meta"><strong>Participants:</strong> Ekadh Singh, Andre Kotsenko, David Rodriguez</div>
+          <p class="project-description">
+            An agent trained on a given reward (for example, to collect coins in a game) is not necessarily motivated by
+            that reward. One way to see this is to deploy the agent in a new environment: it may act in ways that were
+            correlated with coin collection in its training environment, even if those actions no longer yield coins.
+            This project explores black-box definitions of “motivation” based on counterfactual experience (minimal
+            changes to the environment that alter behavior) and counterfactual training (minimal changes to the
+            curriculum that alter behavior).
+          </p>
+        </div>
+
+        <!-- 8) Facial Emotion as a Reward Signal -->
+        <div class="project-card">
+          <div class="project-title">Facial emotion as a reward signal</div>
+          <div class="project-meta"><strong>Mentors:</strong> Lionel Levine, Uday Tyagi</div>
+          <div class="project-meta"><strong>Participants:</strong> Salena Tang, Gokulanath Kumar</div>
+          <p class="project-description">
+            This project builds on
+            <a href="https://github.com/lionellevine/emili" class="resource-link">emili</a>
+            by using FER (facial emotion recognition) to train a reward model for LLM fine-tuning.
+          </p>
+        </div>
+
+        <!-- 9) Glauber dynamics on a natural language state space -->
+        <div class="project-card">
+          <div class="project-title">Glauber dynamics on a natural language state space</div>
+          <div class="project-meta"><strong>Mentors:</strong> Lionel Levine, Suvadip Sana</div>
+          <div class="project-meta"><strong>Participants:</strong> Aitzaz Shaikh, Neer Mehta, Sami Wolf, Alina Shah</div>
+          <p class="project-description">
+            Masked language models like BERT define a Markov chain on the set of texts of a given length: at each time
+            step, a random token is resampled conditional on all other tokens. As the temperature decreases, more and
+            more states become metastable “traps”. Building on research started in fall 2025, this project investigates
+            a phase transition in the temperature, how framing the text with a fixed prefix or suffix affects the
+            stationary distribution, and how to tilt the distribution with a reward model. The goal is to understand
+            what this Markov chain reveals about the proclivities or biases of the reward model.
+          </p>
+        </div>
+
+        <!-- 10) Benchmarks and incentives -->
+        <div class="project-card">
+          <div class="project-title">Benchmarks and incentives</div>
+          <div class="project-meta"><strong>Mentors:</strong> Lionel Levine, Alaa Daffalla, Mahdi Asgari</div>
+          <div class="project-meta"><strong>Participants:</strong> Ellery Merriam, Ria Kataria</div>
+          <p class="project-description">
+            AI labs compete fiercely to surpass each other on published benchmarks. This project examines the incentives
+            of that process: What are the incentives of benchmark makers? What motivates labs to compete on one
+            benchmark and ignore another? What techniques do labs use to improve performance on a benchmark, and what
+            side-effects arise from this “benchmaxxing”? As an application, the project uses EigenBench to design a
+            public-facing leaderboard where LLMs are ranked on their alignment to different value systems.
+          </p>
+        </div>
+
+        <!-- 11) Causal abstractions inside neural networks -->
+        <div class="project-card">
+          <div class="project-title">Causal abstractions inside neural networks</div>
+          <div class="project-meta"><strong>Mentors:</strong> Ziv Goldfeld, Jonathn Chang</div>
+          <div class="project-meta"><strong>Participants:</strong> Austin Lu, Rohan Shankar, Jane Lackley, Bojro Das</div>
+          <p class="project-description">
+            Modern neural networks can solve complex tasks, but it is often unclear how they do so internally. This
+            project aims to “open the black box” by connecting an interpretable, high-level causal model to the internal
+            computations of a neural network. The objective is to produce concrete “handles” for testing and steering a
+            model, going beyond mere concept localization, and to develop practical methods for identifying and
+            validating high-level algorithmic parts inside real neural networks.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
