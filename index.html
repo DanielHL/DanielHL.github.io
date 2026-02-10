@@ -275,6 +275,37 @@
       margin-bottom: 8px;
     }
 
+    /* Standardized link styles */
+    a.paper-link {
+      color: #607D8B;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a.paper-link:hover {
+      text-decoration: underline;
+    }
+
+    a.pdf-link {
+      color: #f07057;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a.pdf-link:hover {
+      text-decoration: underline;
+    }
+
+    a.resource-link {
+      color: #2196F3;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a.resource-link:hover {
+      text-decoration: underline;
+    }
+
     .responsive-img {
       max-width: 100%; /* Ensures the image does not exceed the container's width */
       /*max-height: 100%; /* Ensures the image does not exceed the container's height */
@@ -358,27 +389,27 @@
                         <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
                           <span style="position: absolute; left: 0; color: #f07057;">•</span>
                           <strong>New laboratory:</strong> <em>Math+ML at Cornell</em> (Spring 2026) With several other faculty members, I am starting a lab for research at the intersection of mathematics and machine learning, such as automated theorem proving, math for AI safety, ML for mathematical modeling, mathematical foundations of ML, or ML for conjecture generation. We hope to involve undergraduates, graduate students, and postdocs at Cornell. Undergraduates can receive credit for participating, through Math 4900.
-                          <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-5uDXSav0aKFZ8k8eOScCNmPUE2t2FgaruZxzIUinnC-I5w/viewform?usp=dialog" style="color: #2196F3; text-decoration: none; font-weight: bold;">Register here if you are interested →</a></p>
+                          <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSe-5uDXSav0aKFZ8k8eOScCNmPUE2t2FgaruZxzIUinnC-I5w/viewform?usp=dialog" class="resource-link">Register here if you are interested →</a></p>
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
                           <span style="position: absolute; left: 0; color: #f07057;">•</span>
                           <strong>New Paper:</strong> <em>A categorical perspective on non-abelian localization.</em> (Sept. 2025) Develops a new method to study the derived category of quasi-coherent sheaves on stacks with a $\Theta$-stratification, with applications to enumerative geometry.
-                          <p><a href="http://arxiv.org/abs/2509.24009" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+                          <p><a href="http://arxiv.org/abs/2509.24009" class="paper-link">View Paper →</a></p>
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
                           <span style="position: absolute; left: 0; color: #f07057;">•</span>
                           <strong>Research Project:</strong> <em>Autoformalization for the working mathematician benchmark</em>. An effort to develop a benchmarking dataset for autoformalization of mathematics, with special emphasis on tasks that are useful for research mathematicians, beginning in June, 2025.
-                          <p><a href="https://github.com/DanielHL/autoformalization_pilot" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Github Repo →</a></p>
+                          <p><a href="https://github.com/DanielHL/autoformalization_pilot" class="resource-link">View Github Repo →</a></p>
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
                           <span style="position: absolute; left: 0; color: #f07057;">•</span>
                           <strong>Conference Talk:</strong> <em>On the alignment problem in mathematics</em> at the Stevens Institute of Technology, June 2025. An invitation for mathematicians to play an active role in the development of AI tools. I announce a community project to construct a dataset for training autoformalization systems.
-                          <p><a href="https://docs.google.com/presentation/d/1dHOjWLtdn7x31tYfsznRVAolzTQxgFAYGcC-Sd0Ihxg/edit?usp=sharing" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Slides →</a></p>
+                          <p><a href="https://docs.google.com/presentation/d/1dHOjWLtdn7x31tYfsznRVAolzTQxgFAYGcC-Sd0Ihxg/edit?usp=sharing" class="pdf-link">View Slides →</a></p>
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
                           <span style="position: absolute; left: 0; color: #f07057;">•</span>
                           <strong>Conference Talk:</strong> <em>Moduli spaces of objects in dg-categories</em> at the <a href="https://www.imsa.miami.edu/events/2025-spring-emphasis/hms-2025/index.html">Homological Mirror Symmetry conference</a> in honor of Maxim Kontsevich's 60th birthday, January 2025. I use recent results in moduli theory to give an intrinsic formulation of homological mirror symmetry, and I introduce some conjectures in symplectic topology that would imply it. I gave a similar talk at the <a href="https://sites.google.com/view/2025summerinstitute/home?authuser=0">2025 Summer Research Institute in Algebraic Geometry</a>, July 2025
-                          <p><a href="miami_dg_moduli_slides.pdf" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Slides →</a></p>
+                          <p><a href="miami_dg_moduli_slides.pdf" class="pdf-link">View Slides →</a></p>
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 20px; position: relative;">
                           <span style="position: absolute; left: 0; color: #f07057;">•</span>
@@ -410,7 +441,7 @@
     <div class="padded">
       <h2 align="center">Research</h2>
       <div style="max-width: auto; margin: 0 auto 40px auto; padding: 20px; background: #f8f8f8; border-radius: 10px; border-left: 4px solid #f07057;">
-        <p style="margin-bottom: 0; line-height: 1.6;">Below is a selection of my research projects, organized into three main themes. A full and up-to-date list of my articles is available <a href="https://arxiv.org/search/?searchtype=author&query=Halpern-Leistner%2C+D">here</a> and on my <a href="https://scholar.google.com/citations?user=jKEHH8kAAAAJ&hl=en">Google Scholar page</a>.</p>
+        <p style="margin-bottom: 0; line-height: 1.6;">Below is a selection of my research projects, organized into three main themes. A full and up-to-date list of my articles is available <a href="https://arxiv.org/search/?searchtype=author&query=Halpern-Leistner%2C+D" class="resource-link">here</a> and on my <a href="https://scholar.google.com/citations?user=jKEHH8kAAAAJ&hl=en" class="resource-link">Google Scholar page</a>.</p>
       </div>
       
       <!-- Research Themes -->
@@ -452,8 +483,8 @@
           <div class="article-content">
             <p>A common kind of problem in algebraic geometry is to find a space, called a moduli space, parameterizing isomorphism classes of some kind of algebro-geometric objects -- let's call them widgets. Many attempts to form a moduli space for widgets proceed by finding a scheme, $X$, which parameterizes a family of widgets, and an algebraic group, $G$, acting on $X$ such that points in the same orbit under $G$ parameterize isomorphic widgets. Then hopefully one can apply geometric invariant theory to find an open subset in X which has a good quotient under the action of $G$, and whose $G$-orbits classify ``semistable'' widgets. However, there are many situations where a stability condition can be specified on widgets without referring to any GIT problem. We discuss a framework for defining a notion of semistability for an arbitrary moduli problem, and we introduce a structure on the unstable locus, which we call a Theta-stratification, which generalizes classical stratifications of the unstable locus in GIT as well as of the moduli of vector bundles on a curve. We identify a class of moduli problems, which we call $\Theta$-reductive, for which the GIT story carries over nicely into this more general framework -- for these stacks the existence of a $\Theta$-stratification on the unstable locus can be reduced to checking a relatively simple hypothesis.</p>
             <ul>
-              <li><em>"On the structure of instability in moduli theory," (<a href="https://arxiv.org/abs/1411.0627">arXiv</a>)</em></li>
-              <li><em>Updated version <a href="theta_stability_2022_02_02_wide.pdf">here</a>. (Last update 2/2/2022)</em></li>
+              <li><em>"On the structure of instability in moduli theory," (<a href="https://arxiv.org/abs/1411.0627" class="paper-link">arXiv</a>)</em></li>
+              <li><em>Updated version <a href="theta_stability_2022_02_02_wide.pdf" class="pdf-link">here</a>. (Last update 2/2/2022)</em></li>
             </ul>
           </div>
         </div>
@@ -474,7 +505,7 @@
             This paper proves several foundational results of our framework. The first is the constancy theorem, which states that the isomorphism types of connected components of the stacks of graded and filtered points stay constant within chambers in the component lattice. The second is the finiteness theorem, which provides a criterion for the finiteness of the number of possible isomorphism types of these components. The third is the associativity theorem, generalizing the structure of Hall algebras from linear stacks to general stacks.
             
             We also discuss some applications of these results outside Donaldson-Thomas theory, including a construction of stacks of real-weighted filtrations, and a generalization of the semistable reduction theorem to real-weighted filtrations.</p>
-            <p><a href="https://arxiv.org/abs/2502.13892" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+            <p><a href="https://arxiv.org/abs/2502.13892" class="paper-link">View Paper →</a></p>
           </div>
         </div>
 
@@ -488,7 +519,7 @@
           <div class="article-content">
             <p>Joint with Andres Fernandez Herrero, Trevor Jones, and Ritvik Ramkumar, I investigated alternative approaches to constructing moduli of polarized varieties using geometric invariant theory on moduli spaces of branchvarieties. These moduli spaces provide alternatives to Hilbert schemes.</p>
             <p>Abstract: We resolve an open problem posed by Alexeev-Knutson on the projectivity of the moduli of branchvarieties in the equidimensional case. As an application, we construct projective moduli spaces of reduced equidimensional varieties equipped with ample linear series and subject to a semistability condition.</p>
-            <p><a href="https://arxiv.org/abs/2410.10753" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+            <p><a href="https://arxiv.org/abs/2410.10753" class="paper-link">View Paper →</a></p>
           </div>
         </div>
 
@@ -501,7 +532,7 @@
           <div class="article-date">update 5/17/22</div>
           <div class="article-content">
             <p><em>"Artin algebraization for pairs with applications to the local structure of stacks and Ferrand pushouts"</em> with Jack Hall and David Rydh: We give a variant of Artin algebraization along closed subschemes and closed substacks. Our main application is the existence of étale, smooth, or syntomic neighborhoods of closed subschemes and closed substacks. In particular, we prove local structure theorems for stacks and their derived counterparts and the existence of henselizations along linearly fundamental closed substacks. These results establish the existence of Ferrand pushouts, which answers positively a question of Temkin-Tyomkin.</p>
-            <p><a href="https://arxiv.org/abs/2205.08623" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+            <p><a href="https://arxiv.org/abs/2205.08623" class="paper-link">View Paper →</a></p>
           </div>
         </div>
 
@@ -517,11 +548,11 @@
             <ul>
               <li>
                 <em>"Moduli spaces of sheaves via affine Grassmannians"</em> with Andres Fernandez Herrero and Trevor Jones: We develop a new method for analyzing moduli problems related to the stack of pure coherent sheaves on a polarized family of projective schemes. It is an infinite-dimensional analogue of geometric invariant theory. We apply this to two familiar moduli problems: the stack of -modules and the stack of pairs. In both examples, we construct a -stratification of the stack, defined in terms of a polynomial numerical invariant, and we construct good moduli spaces for the open substacks of semistable points. One of the essential ingredients is the construction of higher dimensional analogues of the affine Grassmannian for the moduli problems considered.
-                <p><a href="https://arxiv.org/abs/2107.02172" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+                <p><a href="https://arxiv.org/abs/2107.02172" class="paper-link">View Paper →</a></p>
               </li>
               <li>
                 <em>"The structure of the moduli of gauged maps from a smooth curve"</em> with Andres Fernandez Herrero: For a reductive group $G$, Harder-Narasimhan theory gives a structure theorem for principal $G$ bundles on a smooth projective curve $C$. A bundle is either semistable, or it admits a canonical parabolic reduction whose associated Levi bundle is semistable. We extend this structure theorem by constructing a $\Theta$-stratification of the moduli stack of gauged maps from $C$ to a projective-over-affine $G$-variety $X$. The open stratum coincides with the previously studied moduli of Mundet semistable maps, and in special cases coincides with the moduli of stable quasi-maps. As an application of the stratification, we provide a formula for K-theoretic gauged Gromov-Witten invariants when $X$ is an arbitrary linear representation of $G$. This can be viewed as a generalization of the Verlinde formula for moduli spaces of decorated principal bundles. We establish our main technical results for smooth families of curves over an arbitrary Noetherian base. Our proof develops an infinite-dimensional analog of geometric invariant theory and applies the theory of optimization on degeneration fans.
-                <p><a href="https://arxiv.org/abs/2305.09632" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+                <p><a href="https://arxiv.org/abs/2305.09632" class="paper-link">View Paper →</a></p>
               </li>
             </ul>
           </div>
@@ -539,11 +570,11 @@
             <ul>
               <li>
                 <em>"On properness of $K$-moduli spaces and optimal degenerations of Fano varieties"</em> with Harold Blum, Yuchen Liu, and Chenyang Xu: We establish an algebraic approach to prove the properness of moduli spaces of K-polystable Fano varieties and reduce the problem to a conjecture on destabilizations of K-unstable Fano varieties. Specifically, we prove that if the stability threshold of every K-unstable Fano variety is computed by a divisorial valuation, then such K-moduli spaces are proper. The argument relies on studying certain optimal destabilizing test configurations and constructing a Theta-stratification on the moduli stack of Fano varieties.
-                <p><a href="https://arxiv.org/abs/2011.01895" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+                <p><a href="https://arxiv.org/abs/2011.01895" class="paper-link">View Paper →</a></p>
               </li>
               <li>
                 <em>"Reductivity of the automorphism group of K-polystable Fano varieties"</em> with Jarod Alper, Harold Blum, and Chenyang Xu: We prove that K-polystable log Fano pairs have reductive automorphism groups. In fact, we deduce this statement by establishing more general results concerning the S-completeness and $\Theta$-reductivity of the moduli of K-semistable log Fano pairs. Assuming the conjecture that K-semistability is an open condition, we prove that the Artin stack parametrizing K-semistable Fano varieties admits a separated good moduli space.
-                <p><a href="https://arxiv.org/abs/1906.03122" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+                <p><a href="https://arxiv.org/abs/1906.03122" class="paper-link">View Paper →</a></p>
               </li>
             </ul>
           </div>
@@ -559,7 +590,7 @@
           <div class="article-content">
             <p>One essential feature of a scheme $X$ which is flat and proper over a base $S$ is that for any scheme $Y$ which is of finite type over $S$, there is an algebraic space $Map(X,Y)$ classifying maps from $X$ to $Y$. There are extensions of this statement when $X$ is a proper stack over $S$ and $Y$ has some reasonable hypotheses. While studying the notion of instability in algebraic geometry, I noticed that the quotient stack $\bC / \bC^\ast$ has this property as well. This lead to long investigation with Anatoly Preygel into just what properties of a stack X guarantee the existence of algebraic mapping stacks into "geometric" target stacks. We reformulated the notion of "properness" for algebraic stacks in terms of properties of the derived category of those stacks, in such a way that these categorical properties guarantee the existence of algebraic mapping stacks. Our notion generalizes the classical definition of proper Artin stacks, but in addition there are many global quotient stacks which are definitely not proper in the classical sense but are "proper" in our sense. We were able to construct a very large class of examples by introducing a notion of "projective morphism" of stacks, a property which can be readily verified in examples. Along the way, we prove some surprising new descent properties for derived categories of coherent sheaves in derived algebraic geometry.</p>
             <ul>
-              <li><em>"Mapping stacks and categorical notions of properness," with Anatoly Preygel (<a href="https://arxiv.org/abs/1402.3204">arXiv:1402.3204</a>)</em></li>
+              <li><em>"Mapping stacks and categorical notions of properness," with Anatoly Preygel (<a href="https://arxiv.org/abs/1402.3204" class="paper-link">arXiv:1402.3204</a>)</em></li>
             </ul>
           </div>
         </div>
@@ -574,7 +605,7 @@
           <div class="article-content">
             <p>We provide a short and self-contained argument for the existence of Cartan-Iwahori-Matsumoto decompositions for reductive groups.</p>
             <ul>
-              <li><em>"Cartan-Iwahori-Matsumoto decompositions for reductive groups" with Jarod Alper and Jochen Heinloth (<a href="https://arxiv.org/abs/1903.00128">arXiv:1903.00128</a>)</em></li>
+              <li><em>"Cartan-Iwahori-Matsumoto decompositions for reductive groups" with Jarod Alper and Jochen Heinloth (<a href="https://arxiv.org/abs/1903.00128" class="paper-link">arXiv:1903.00128</a>)</em></li>
             </ul>
           </div>
         </div>
@@ -589,7 +620,7 @@
           <div class="article-content">
             <p>We provide necessary and sufficient conditions for when an algebraic stack admits a good moduli space. This theorem provides a generalization of the Keel-Mori theorem to moduli problems whose objects have positive dimensional automorphism groups. We also prove a semistable reduction theorem for points of algebraic stacks equipped with a $\Theta$-stratification. Using these results we find conditions for the good moduli space to be separated or proper. To illustrate our method, we apply these results to construct proper moduli spaces parameterizing semistable $G$-bundles on curves.</p>
             <ul>
-              <li><em>"Existence of good moduli spaces for algebraic stacks" with Jarod Alper and Jochen Heinloth (<a href="https://arxiv.org/abs/1812.01128">arXiv:1812.01128</a>)</em></li>
+              <li><em>"Existence of good moduli spaces for algebraic stacks" with Jarod Alper and Jochen Heinloth (<a href="https://arxiv.org/abs/1812.01128" class="paper-link">arXiv:1812.01128</a>)</em></li>
             </ul>
           </div>
         </div>
@@ -604,7 +635,7 @@
           <div class="article-content">
             <p>Any map between algebraic stacks $f: \fX \to \fY$ yields a symmetric monoidal functor between derived categories of quasicoherent sheaves $f^\ast : QC(\fY) \to QC(\fX)$. Jacob Lurie showed that when $\fY$ is geometric (meaning quasicompact with affine diagonal), $f$ can be uniquely recovered from $f^\ast$, and the symmetric monoidal functors arising in this way are those satisfying certain hypotheses (continuous, preserving connective objects and flat objects). We generalize this result, showing that for many stacks, it is not necessary to show that $f$ preserves flat objects. This seemingly minor modification allows for a much wider range of applications of this "Tannakian formalism."</p>
             <p>
-              "Tannaka duality revisited" with Bhargav Bhatt (<a href="http://arxiv.org/abs/1507.01925">arxiv:1507.01925</a>)
+              "Tannaka duality revisited" with Bhargav Bhatt (<a href="http://arxiv.org/abs/1507.01925" class="paper-link">arxiv:1507.01925</a>)
             </p>
           </div>
         </div>
@@ -624,8 +655,8 @@
           <div class="article-content">
             <p>This is a short note which discusses a construction involving equivariant derived categories which allows one to state a categorical version of the classical Atiyah-Bott localization formula. The classical theorem states that for a smooth manifold with a $\bC^\ast$-action, the fundamental class in equivariant cohomology can be decomposed as a finite sum with each term corresponding to a connected component of the fixed locus, but in order to do this one must formally invert certain elements in the equivariant cohomology of the point. We show that if $X$ is a smooth scheme, then the structure sheaf of $X$ admits a filtration whose associated graded pieces correspond to connected components of the fixed locus, but in order to do this one must work in a slightly larger category of equivariant complexes, which we define.</p>
             <p>
-              Original draft version: <a href="localization_2016_08_28.pdf">"A categorification of the Atiyah-Bott localization formula</a>; last update 5/21/2016
-              Final version, on arXiv: <a href="http://arxiv.org/abs/2509.24009">A categorical perspective on non-abelian localization</a>
+              Original draft version: <a href="localization_2016_08_28.pdf" class="pdf-link">"A categorification of the Atiyah-Bott localization formula</a>; last update 5/21/2016
+              Final version, on arXiv: <a href="http://arxiv.org/abs/2509.24009" class="paper-link">A categorical perspective on non-abelian localization</a>
             </p>
           </div>
         </div>
@@ -646,11 +677,11 @@
                 A point of $Astab(\mathcal{C})$, called an augmented stability condition on $\mathcal{C}$, consists of a newly introduced homological structure called a multi-scale decomposition, along with stability conditions on subquotient categories of $\mathcal{C}$ associated to this multi-scale decomposition. A generic multi-scale decomposition corresponds to a semiorthogonal decomposition along with a configuration of points in $\bC$.
     
                 We give a conjectural description of open neighborhoods of certain boundary points, called the \emph{manifold-with-corners conjecture}, and we prove it in a special case. We show that this conjecture implies the existence of proper good moduli spaces of Bridgeland semistable objects in $\mathcal{C}$ when $\mathcal{C}$ is smooth and proper, and discuss some first examples where the manifold-with-corners conjecture holds.
-                <p><a href="https://arxiv.org/abs/2501.00710" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+                <p><a href="https://arxiv.org/abs/2501.00710" class="paper-link">View Paper →</a></p>
               </li>
               <li>
                 <em>"Stability conditions and semiorthogonal decompositions I: quasi-convergence"</em> with Jeffrey Jiang and Alekos Robotis: We develop a framework relating semiorthogonal de-compositions of a triangulated category $\mathcal{C}$ to paths in its space of stability conditions. We prove that when $\mathcal{C}$ is the homotopy category of a smooth and proper idempotent complete pre-triang\-ulated dg-category, every semiorthogonal decomposition whose fac\-tors admit a Bridgeland stability condition can be obtained from our framework.
-                <p><a href="https://arxiv.org/abs/2401.00600" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+                <p><a href="https://arxiv.org/abs/2401.00600" class="paper-link">View Paper →</a></p>
               </li>
             </ul>
           </div>
@@ -665,7 +696,7 @@
           <div class="article-date">update 3/27/24</div>
           <div class="article-content">
             <p>This note aims to clarify the deep relationship between birational modifications of a variety and semiorthogonal decompositions of its derived category of coherent sheaves. The result is a conjecture on the existence and properties of canonical semiorthogonal decompositions, which is a noncommutative analog of the minimal model program. We identify a mechanism for constructing semiorthogonal decompositions using Bridgeland stability conditions, and we propose that through this mechanism the quantum differential equation of the variety controls the conjectured semiorthogonal decompositions. We establish several implications of the conjectures: one direction of Dubrovin's conjecture on the existence of full exceptional collections; the $D$-equivalence conjecture; the existence of new categorical birational invariants for varieties of positive genus; and the existence of minimal noncommutative resolutions of singular varieties. Finally, we verify the conjectures for smooth projective curves by establishing a previously conjectured description of the stability manifold of $\mathbb{P}^1$.</p>
-            <p><a href="https://arxiv.org/abs/2301.13168" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+            <p><a href="https://arxiv.org/abs/2301.13168" class="paper-link">View Paper →</a></p>
           </div>
         </div>
 
@@ -679,7 +710,7 @@
           <div class="article-content">
             <p>Joint with Kimoi Kemboi.</p>
             <p>We produce full strong exceptional collections consisting of vector bundles on the geometric invariant theory quotient of certain linear actions of a split reductive group $G$ of rank two. The vector bundles correspond to irreducible $G$-representations whose weights lie in an explicit bounded region in the weight space of $G$. We also describe a method for constructing more examples of linear GIT quotients with full strong exceptional collections of this kind as ``decorated" quiver varieties.</p>
-            <p><a href="https://arxiv.org/abs/2202.12876" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+            <p><a href="https://arxiv.org/abs/2202.12876" class="paper-link">View Paper →</a></p>
           </div>
         </div>
 
@@ -693,13 +724,13 @@
           <div class="article-content">
             <p>A follow up to "The derived category of a GIT quotient." The theory of $\Theta$-stratifications generalizes a classical stratification of the moduli of vector bundles on a smooth curve, the Harder-Narasimhan-Shatz stratification, to any moduli problem that can be represented by an algebraic stack. We use methods from derived algebraic geometry to develop a structure theory, which is a refinement of the theory of local cohomology, for the derived category of quasi-coherent complexes on an algebraic stack equipped with a $\Theta$-stratification. We then apply this to the $D$-equivalence conjecture, which predicts that birationally equivalent Calabi-Yau manifolds have equivalent derived categories of coherent sheaves. We prove that any two projective Calabi-Yau manifolds that are birationally equivalent to a smooth moduli space of Gieseker semistable coherent sheaves on a $K3$ surface have equivalent derived categories. This establishes the first known case of the $D$-equivalence conjecture for a birational equivalence class in dimension greater than three.</p>
             <ul>
-              <li>"Derived $\Theta$-stratifications and the D-equivalence conjecture." (<a href="https://arxiv.org/abs/2010.01127">draft</a>; last update 10/01/20)</li>
+              <li>"Derived $\Theta$-stratifications and the D-equivalence conjecture." (<a href="https://arxiv.org/abs/2010.01127" class="paper-link">draft</a>; last update 10/01/20)</li>
               <li>These results were originally announced in the paper ``Theta-stratifications, Theta-reductive stacks, and applications"</li>
             </ul>
             <p><em>Preliminary versions:</em> The above paper unites, generalizes, and corrects minor errors in two previous notes. I am preserving them here for reference.</p>
             <ul>
-              <li>"The D-equivalence conjecture for moduli spaces of sheaves on a K3 surface" (<a href="derived_equivalences_2016_09_18.pdf">draft</a>; last update 2/08/17) -- proves that under suitable genericity hypotheses, a variation of good moduli space for a derived stack with self-dual cotangent complex results in a derived equivalence, and sketches the main application to the D-equivalence conjecture.</li>
-              <li>"An appendix to 'Theta stratifications and derived categories'" (<a href="derived_Kirwan_surjectivity_appendix_2015_01_13.pdf">draft</a>; last update 2/04/15) -- proves a version of the main theorem for global quotient stacks, which is enough for many applications</li>
+              <li>"The D-equivalence conjecture for moduli spaces of sheaves on a K3 surface" (<a href="derived_equivalences_2016_09_18.pdf" class="pdf-link">draft</a>; last update 2/08/17) -- proves that under suitable genericity hypotheses, a variation of good moduli space for a derived stack with self-dual cotangent complex results in a derived equivalence, and sketches the main application to the D-equivalence conjecture.</li>
+              <li>"An appendix to 'Theta stratifications and derived categories'" (<a href="derived_Kirwan_surjectivity_appendix_2015_01_13.pdf" class="pdf-link">draft</a>; last update 2/04/15) -- proves a version of the main theorem for global quotient stacks, which is enough for many applications</li>
             </ul>
           </div>
         </div>
@@ -709,7 +740,7 @@
             <div class="article-thumbnail" style="position: relative;">
             <img src="thumbnail_higgs.png" class="responsive-img" alt="Thumbnail" style="object-fit: contain; width: 100%; height: 100%;">
             <div style="font-size: 0.8em; color: #666; text-align: right; position: absolute; bottom: 0; right: 0; background: rgba(255, 255, 255, 0.8); padding: 2px;">
-              (Image source: <a href="https://arxiv.org/abs/2201.12689" style="color: #607D8B; text-decoration: none;">Elliot Kienzle and Steven Rayan</a>)
+              (Image source: <a href="https://arxiv.org/abs/2201.12689" class="paper-link">Elliot Kienzle and Steven Rayan</a>)
             </div>
             </div>
           <div class="article-title">The equivariant Verlinde formula on the moduli of Higgs bundles</div>
@@ -717,7 +748,7 @@
           <div class="article-content">
             <p>The Verlinde formula expresses the dimension of the space of global sections of certain "determinant" line bundles on the moduli of principal $G$ bundles on a smooth curve $\Sigma$, where $G$ is a semisimple group. We prove an analog of the Verlinde formula on the moduli space of semistable meromorphic $G$-Higgs bundles over a smooth curve for a reductive group $G$ whose fundamental group is free. The formula expresses the graded dimension of the space of sections of a positive line bundle on the moduli space of Higgs bundles as a finite sum whose terms are indexed by formal solutions of a generalized Bethe ansatz equation on the maximal torus of $G$.</p>
             <p>
-              "The equivariant Verlinde formula on the moduli of Higgs bundles" with an appendix by Constantin Teleman (<a href="http://arxiv.org/abs/1608.01754">arxiv:1608.01754</a>)
+              "The equivariant Verlinde formula on the moduli of Higgs bundles" with an appendix by Constantin Teleman (<a href="http://arxiv.org/abs/1608.01754" class="paper-link">arxiv:1608.01754</a>)
             </p>
           </div>
         </div>
@@ -738,7 +769,7 @@
               <li>Equivalences (under some mild hypotheses) between all Deligne-Mumford hyperkaehler quotients of a symplectic representation of a reductive group</li>
             </ul>
             <p>
-              "Combinatorial constructions of derived equivalences" with Steven Sam (<a href="http://arxiv.org/abs/1601.02030">arxiv:1601.02030</a>)
+              "Combinatorial constructions of derived equivalences" with Steven Sam (<a href="http://arxiv.org/abs/1601.02030" class="paper-link">arxiv:1601.02030</a>)
             </p>
           </div>
         </div>
@@ -753,7 +784,7 @@
           <div class="article-content">
             <p>We develop a version of Hodge theory for a large class of smooth cohomologically proper quotient stacks $X/G$ analogous to Hodge theory for smooth projective schemes. We show that the noncommutative Hodge-de Rham sequence for the category of equivariant coherent sheaves degenerates. This spectral sequence converges to the periodic cyclic homology, which we canonically identify with the topological equivariant $K$-theory of $X$ with respect to a maximal compact subgroup $M \subset G$. The result is a natural pure Hodge structure of weight $n$ on $K^n_M(X^{an})$. We also treat categories of matrix factorizations for equivariant Landau-Ginzburg models.</p>
             <ul>
-              <li>"Equivariant Hodge theory and noncommutative geometry" with Daniel Pomerleano (<a href="http://arxiv.org/abs/1507.01924">arxiv:1507.01924</a>)</li>
+              <li>"Equivariant Hodge theory and noncommutative geometry" with Daniel Pomerleano (<a href="http://arxiv.org/abs/1507.01924" class="paper-link">arxiv:1507.01924</a>)</li>
             </ul>
           </div>
         </div>
@@ -768,7 +799,7 @@
           <div class="article-content">
             <p>In geometric invariant theory (see below), the GIT quotient of $X/G$ depends on a choice from a continuous set of parameters. Nevertheless, the parameter space breaks down into "chambers" within which the GIT quotient <em>does not vary</em>, and these chambers are separated by "walls." When the parameters cross a wall, the GIT quotient is modified by a "birational transformation." I have been studying how the geometry and especially the derived geometry of the GIT quotient changes under such a wall crossing. For the special case of these wall crossings known as a "generalized flop," the derived geometry of the GIT quotient does not change at all. These cases are especially interesting -- they can reveal new symmetries of the derived category of the GIT quotient which do not arise in the classical geometry.</p>
             <ul>
-              <li>"Autoequivalences of derived categories and variation of GIT quotient," with Ian Shipman (<a href="http://arxiv.org/abs/1303.5531">arxiv:1303.5531</a>)</li>
+              <li>"Autoequivalences of derived categories and variation of GIT quotient," with Ian Shipman (<a href="http://arxiv.org/abs/1303.5531" class="paper-link">arxiv:1303.5531</a>)</li>
             </ul>
           </div>
         </div>
@@ -783,9 +814,9 @@
           <div class="article-content">
             <p>If an algebraic group $G$ acts on an algebraic variety $X$, such as $\bC^\ast$ acting on affine space by dilation, is there a meaningful notion of a "space of orbits" for that action? Mumford's geometric invariant theory (GIT) answers this question by constructing a well-behaved orbit space for the action of $G$ on an open subset of "semistable points" of $X$. Many of the algebraic varieties we know and love (partial flag varieties, toric varieties,...) can be presented as GIT quotients of affine spaces. Since the 1980's, many beautiful relationships between the geometry and topology of the GIT quotient and the "equivariant" geometry of $X$ have been discovered. My research extends these relationships to the "derived" equivariant geometry of $X$ and the derived geometry of the GIT quotient.</p>
             <ul>
-              <li>The final version treats quotient stacks X/G subject to a certain technical hypothesis on the stratification (<a href="http://arxiv.org/abs/1203.0276">arxiv:1203.0276</a>)</li>
-              <li>For newcomers, I'd recommend first looking at the version which treated just the smooth case (<a href="http://arxiv.org/abs/1203.0276v2">arxiv:1203.0276v2</a>). Warning: This version contains some errors in the description of the stratification that I corrected in the final version.</li>
-              <li>Notes from an introductory <a href="talk_tensors_workshop_9_27_12.pdf">talk</a></li>
+              <li>The final version treats quotient stacks X/G subject to a certain technical hypothesis on the stratification (<a href="http://arxiv.org/abs/1203.0276" class="paper-link">arxiv:1203.0276</a>)</li>
+              <li>For newcomers, I'd recommend first looking at the version which treated just the smooth case (<a href="http://arxiv.org/abs/1203.0276v2" class="paper-link">arxiv:1203.0276v2</a>). Warning: This version contains some errors in the description of the stratification that I corrected in the final version.</li>
+              <li>Notes from an introductory <a href="talk_tensors_workshop_9_27_12.pdf" class="pdf-link">talk</a></li>
             </ul>
           </div>
         </div>
@@ -805,7 +836,7 @@
           <div class="article-content">
             <p>Studying the set of exact solutions of a system of polynomial equations largely depends on a single iterative algorithm, known as Buchberger's algorithm. Optimized versions of this algorithm are crucial for many computer algebra systems (e.g., Mathematica, Maple, Sage). We introduce a new approach to Buchberger's algorithm that uses reinforcement learning agents to perform S-pair selection, a key step in the algorithm. We then study how the difficulty of the problem depends on the choices of domain and distribution of polynomials, about which little is known. Finally, we train a policy model using proximal policy optimization (PPO) to learn S-pair selection strategies for random systems of binomial equations. In certain domains, the trained model outperforms state-of-the-art selection heuristics in total number of polynomial additions performed, which provides a proof-of-concept that recent developments in machine learning have the potential to improve performance of algorithms in symbolic computation.</p>
             <ul>
-              <li><em>"Learning selection strategies in Buchberger's algorithm" with Dylan Peifer and Mike Stillman (<a href="https://arxiv.org/abs/2005.01917">arXiv:2005.01917</a>)</em></li>
+              <li><em>"Learning selection strategies in Buchberger's algorithm" with Dylan Peifer and Mike Stillman (<a href="https://arxiv.org/abs/2005.01917" class="paper-link">arXiv:2005.01917</a>)</em></li>
             </ul>
           </div>
         </div>
@@ -820,8 +851,8 @@
           <div class="article-content">
             <p>This project is under development. With an interdisciplinary group of collaborators, I have designed a benchmark dataset that specifically targets a task that will be immediately useful for working mathematicians but is also challenging enough to be useful for machine learning researchers. Please email if you are interested in learning more or contributing.</p>
             <p>The idea is that each datapoint will be a blueprint for the proof of a very challenging known result in research-level mathematics. The datapoint includes definition, lemma, and theorem statements in Lean4, and it includes proofs in natural language. The task is for the model to use the natural language arguments and the directed graph of logical dependencies between statements to fill in correct proofs in Lean4 for all missing proofs.</p>
-            <p><a href="https://github.com/DanielHL/autoformalization_pilot" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Github Repo →</a></p>
-            <p><a href="https://docs.google.com/presentation/d/1dHOjWLtdn7x31tYfsznRVAolzTQxgFAYGcC-Sd0Ihxg/edit?usp=sharing" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Slides →</a></p>
+            <p><a href="https://github.com/DanielHL/autoformalization_pilot" class="resource-link">View Github Repo →</a></p>
+            <p><a href="https://docs.google.com/presentation/d/1dHOjWLtdn7x31tYfsznRVAolzTQxgFAYGcC-Sd0Ihxg/edit?usp=sharing" class="pdf-link">View Slides →</a></p>
           </div>
         </div>
 
@@ -834,8 +865,8 @@
           <div class="article-date">update July 2025</div>
           <div class="article-content">
             <p>I worked with the team at Harmonic.fun to develop their ``Aristotle" system to solve problems from the International Mathematical Olympiad. The system uses language models to do an enhanced tree search for proofs of lemma statements in Lean4. In July 2025, the system achieved a perfect score on 5 out of the 6 problems at IMO 2025, a gold-medal score. The system is still under development, but these results suggest that it has the potential to be a powerful tool for solving challenging mathematical problems.</p>
-            <p><a href="https://harmonic.fun/news#blog-post-imo" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Blog Post →</a></p>
-            <p><a href="https://arxiv.org/abs/2510.01346" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Paper →</a></p>
+            <p><a href="https://harmonic.fun/news#blog-post-imo" class="resource-link">View Blog Post →</a></p>
+            <p><a href="https://arxiv.org/abs/2510.01346" class="paper-link">View Paper →</a></p>
           </div>
         </div>
 
@@ -860,14 +891,14 @@
         <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #FF9800;">
           <h4 style="color: #FF9800; margin-top: 0; margin-bottom: 15px;">Moduli of objects in dg-categories (2025)</h4>
           <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">Talk at <a href="https://www.imsa.miami.edu/events/2025-spring-emphasis/hms-2025/index.html">Homological Mirror Symmetry conference</a> in honor of Maxim Kontsevich's 60th birthday. I use recent results in moduli theory to give an intrinsic formulation of homological mirror symmetry, and I introduce some conjectures in symplectic topology that would imply it.</p>
-          <a href="miami_dg_moduli_slides.pdf" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Slides →</a>
+          <a href="miami_dg_moduli_slides.pdf" class="pdf-link">View Slides →</a>
         </div>
 
         <!-- ICBS talk -->
         <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #607D8B;">
           <h4 style="color: #607D8B; margin-top: 0; margin-bottom: 15px;">ICBS Talk (July 2024)</h4>
           <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">A proceedings paper <em>On the structure of equivariant derived categories</em> for the 2024 International Congress of Basic Science, based on my acceptance talk for a Frontiers of Science Award.</p>
-          <a href="https://arxiv.org/abs/2410.10979" style="color: #607D8B; text-decoration: none; font-weight: bold;">View Paper →</a>
+          <a href="https://arxiv.org/abs/2410.10979" class="paper-link">View Paper →</a>
         </div>
         
         <!-- Swiss Lectures -->
@@ -875,8 +906,8 @@
           <h4 style="color: #4CAF50; margin-top: 0; margin-bottom: 15px;">Swiss Lectures (2017)</h4>
           <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">Notes from lectures on Theta-stability and existence of good moduli spaces, with applications to Donaldson invariants.</p>
           <div style="display: flex; gap: 15px;">
-            <a href="Swiss Lecture 1.pdf" style="color: #4CAF50; text-decoration: none; font-weight: bold;">Lecture 1</a>
-            <a href="Swiss Lecture 2.pdf" style="color: #4CAF50; text-decoration: none; font-weight: bold;">Lecture 2</a>
+            <a href="Swiss Lecture 1.pdf" class="pdf-link">Lecture 1</a>
+            <a href="Swiss Lecture 2.pdf" class="pdf-link">Lecture 2</a>
           </div>
         </div>
 
@@ -884,7 +915,7 @@
         <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #2196F3;">
           <h4 style="color: #2196F3; margin-top: 0; margin-bottom: 15px;">Colloquium Talk (2017)</h4>
           <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">A colloquium-style slide talk on applications of beyond GIT to the D-equivalence conjecture.</p>
-          <a href="colloquium_derived_equivalences_2017_01.pdf" style="color: #2196F3; text-decoration: none; font-weight: bold;">View Slides →</a>
+          <a href="colloquium_derived_equivalences_2017_01.pdf" class="pdf-link">View Slides →</a>
         </div>
 
         <!-- AMS Proceedings -->
@@ -892,8 +923,8 @@
           <h4 style="color: #FF9800; margin-top: 0; margin-bottom: 15px;">AMS Proceedings (2015)</h4>
           <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">Proceedings paper for the AMS summer algebraic geometry institute (SLC, 2015).</p>
           <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-            <a href="theta_stratifications_revision_2017_02_21.pdf" style="color: #FF9800; text-decoration: none; font-weight: bold;">Paper</a>
-            <a href="https://utah.equella.ecollege.com/items/b76e80bc-fcf7-420c-a832-c08c43975e80/148/viewcontent?_sl.t=true" style="color: #FF9800; text-decoration: none; font-weight: bold;">Video</a>
+            <a href="theta_stratifications_revision_2017_02_21.pdf" class="pdf-link">Paper</a>
+            <a href="https://utah.equella.ecollege.com/items/b76e80bc-fcf7-420c-a832-c08c43975e80/148/viewcontent?_sl.t=true" class="resource-link">Video</a>
           </div>
         </div>
 
@@ -901,14 +932,14 @@
         <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #9C27B0;">
           <h4 style="color: #9C27B0; margin-top: 0; margin-bottom: 15px;">IAS Member Lecture</h4>
           <p style="line-height: 1.6; color: #666; margin-bottom: 15px;">Short member lecture at the Institute for Advanced Study.</p>
-          <a href="https://www.youtube.com/watch?v=ow_WwZE1_2M" style="color: #9C27B0; text-decoration: none; font-weight: bold;">Watch Video →</a>
+          <a href="https://www.youtube.com/watch?v=ow_WwZE1_2M" class="resource-link">Watch Video →</a>
         </div>-->
 
         <!-- Oberwolfach Report -->
         <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-top: 4px solid #607D8B;">
           <h4 style="color: #607D8B; margin-top: 0; margin-bottom: 15px;">Oberwolfach Report</h4>
           <p style="line-height: 1.6; color: #666; margin-bottom: 15px;"><em>Θ-reductive moduli problems, stratifications, and applications</em> - Brief report from Oberwolfach workshop.</p>
-          <a href="oberwolfach_abstract.pdf" style="color: #607D8B; text-decoration: none; font-weight: bold;">Read Report →</a>
+          <a href="oberwolfach_abstract.pdf" class="pdf-link">Read Report →</a>
         </div>
 
       </div>
@@ -918,7 +949,7 @@
     <div class="padded">
       <h2 align="center">Graduate advising</h2>
       <div style="max-width: auto; margin: 0 auto 40px auto; padding: 20px; background: #f8f8f8; border-radius: 10px; border-left: 4px solid #f07057;">
-        <p style="margin-bottom: 0; line-height: 1.6;">I am currently accepting graduate advisees. If you are interested in working with me as your PhD advisor, please read my <a href="Phd_Plan.pdf">advising philosophy</a>, which sets mutual expectations.</p>
+        <p style="margin-bottom: 0; line-height: 1.6;">I am currently accepting graduate advisees. If you are interested in working with me as your PhD advisor, please read my <a href="Phd_Plan.pdf" class="resource-link">advising philosophy</a>, which sets mutual expectations.</p>
       </div>
 
       <!-- Graduate Students -->
@@ -930,7 +961,7 @@
           <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="dylan-peifer.jpeg" width="80px" height="80px"></div>
           <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Dylan Peifer</h4>
           <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2021</p>
-          <a href="https://www.linkedin.com/in/dylanpeifer/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+          <a href="https://www.linkedin.com/in/dylanpeifer/" class="resource-link" style="font-size: 0.9em;">Professional Page →</a>
         </div>
 
         <!-- Andres Fernandez-Herrero -->
@@ -938,7 +969,7 @@
           <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="andres-fernandez-herrero.jpeg" width="80px" height="80px"></div>
           <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Andres Fernandez-Herrero</h4>
           <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2022</p>
-          <a href="https://web.sas.upenn.edu/andresfh/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+          <a href="https://web.sas.upenn.edu/andresfh/" class="resource-link" style="font-size: 0.9em;">Professional Page →</a>
         </div>
 
         <!-- Kimoi Kemboi -->
@@ -946,7 +977,7 @@
           <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="kimoi-kemboi.jpg" width="80px" height="80px"></div>
           <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Kimoi Kemboi</h4>
           <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2023</p>
-          <a href="https://kimoitoek.github.io/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+          <a href="https://kimoitoek.github.io/" class="resource-link" style="font-size: 0.9em;">Professional Page →</a>
         </div>
 
         <!-- Trevor Jones -->
@@ -954,7 +985,7 @@
           <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="trevor-jones.jpg" width="80px" height="80px"></div>
           <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Trevor Jones</h4>
           <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2025</p>
-          <a href="https://mathematics.jhu.edu/people/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+          <a href="https://mathematics.jhu.edu/people/" class="resource-link" style="font-size: 0.9em;">Professional Page →</a>
         </div>
 
         <!-- Alekos Robotis -->
@@ -962,7 +993,7 @@
           <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="antonios-alexandros-robotis.jpg" width="80px" height="80px"></div>
           <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Alekos Robotis</h4>
           <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">PhD 2025</p>
-          <a href="https://aarobotis.github.io/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+          <a href="https://aarobotis.github.io/" class="resource-link" style="font-size: 0.9em;">Professional Page →</a>
         </div>
 
         <!-- Jeffrey Jiang -->
@@ -978,7 +1009,7 @@
           <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;"><img src="sara-stephens.jpg" width="80px" height="80px"></div>
           <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Sara Stephens</h4>
           <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">Current Student</p>
-          <a href="https://sara-stephens.github.io/" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+          <a href="https://sara-stephens.github.io/" class="resource-link" style="font-size: 0.9em;">Professional Page →</a>
         </div>
 
         <!-- Mingjun Sun -->
@@ -986,7 +1017,7 @@
           <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 0.8em;">Photo</div>
           <h4 style="color: #333; margin: 0 0 5px 0; font-size: 1.1em;">Mingjun Sun</h4>
           <p style="color: #666; margin: 0 0 10px 0; font-size: 0.9em;">Current Student</p>
-          <a href="https://sites.google.com/cornell.edu/mjs/home" style="color: #f07057; text-decoration: none; font-weight: bold; font-size: 0.9em;">Professional Page →</a>
+          <a href="https://sites.google.com/cornell.edu/mjs/home" class="resource-link" style="font-size: 0.9em;">Professional Page →</a>
         </div>
 
       </div>
